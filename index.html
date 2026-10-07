@@ -486,9 +486,41 @@
     .rotator{display:inline-block;min-width:4ch}
     .hero p{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--muted);max-width:640px;margin:0 auto 40px}
     .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:80px;max-width:720px;margin-left:auto;margin-right:auto}
-    .stat strong{display:block;font-family:var(--display);font-size:2.4rem}
-    .stat span{color:var(--muted);font-size:.9rem}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 80px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch; /* Uguali in altezza */
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  min-height: 160px; /* Altezza minima uguale */
+}
+
+.stat strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 3.2rem; /* Più grande */
+  margin-bottom: 12px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
 
     /* MARQUEE */
     .marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 0;overflow:hidden;background:var(--bg2)}
@@ -637,7 +669,7 @@
       <a href="#lavori" class="btn btn-ghost"><i class="fa-regular fa-circle-play"></i> Guarda i lavori</a>
     </div>
     <div class="stats">
-      <div class="stat"><strong><span data-to="50">0</span>+</strong><span>Progetti consegnati</span></div>
+      <div class="stat"><strong><span data-to="250">0</span>+</strong><span>Progetti consegnati</span></div>
       <div class="stat"><strong><span data-to="98">0</span>%</strong><span>Clienti soddisfatti</span></div>
       <div class="stat"><strong>&lt;<span data-to="2">0</span>s</strong><span>Tempo di caricamento</span></div>
     </div>
