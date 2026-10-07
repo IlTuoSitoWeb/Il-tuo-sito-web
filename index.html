@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M&F Studio — Siti web che vendono</title> 
+  <title>M&F Studio — Siti web che vendono</title>
   <meta name="description" content="Progetto e sviluppo siti web veloci, moderni e pensati per portare clienti. Landing page, siti vetrina, e-commerce e web app.">
   <meta property="og:title" content="M&F Studio — Siti web che vendono">
   <meta property="og:description" content="Siti web veloci, moderni e pensati per portare clienti.">
@@ -551,11 +551,16 @@
     submitBtn.textContent = 'Invio in corso…';
     try {
       const r = await fetch(FORM_ENDPOINT, { method: 'POST', body: f, headers: { Accept: 'application/json' } });
-      if (!r.ok) throw new Error('HTTP ' + r.status);
+      if (!r.ok) {
+        const data = await r.json().catch(() => ({}));
+        const detail = data.error || (data.errors || []).map(x => x.message).join(', ') || ('HTTP ' + r.status);
+        throw new Error(detail);
+      }
       formEl.reset();
       showStatus('Richiesta inviata! Ti rispondo entro 24 ore.', true);
     } catch (err) {
-      showStatus(`Invio non riuscito. Scrivimi direttamente a ${EMAIL}`, false);
+      console.error('Formspree:', err);
+      showStatus(`Invio non riuscito (${err.message}). Scrivimi direttamente a ${EMAIL}`, false);
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = label;
