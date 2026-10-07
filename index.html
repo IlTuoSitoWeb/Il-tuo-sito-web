@@ -171,14 +171,23 @@
     .price .canone{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:-12px 0 24px;padding:6px 14px;border-radius:999px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.3);color:var(--cyan);font-size:.85rem;font-weight:600}
 
     /* TESTIMONIALS */
-    .quotes-container{position:relative;margin-top:40px}
-    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
-    .quote{padding:32px;border-radius:var(--radius);border:1px solid var(--border);background:var(--card);animation:slideIn .5s ease}
-    @keyframes slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    .quotes-container{position:relative;max-width:1000px;margin:40px auto 0}
+    .quotes{overflow:hidden;touch-action:pan-y}
+    .qtrack{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1);will-change:transform}
+    .qtrack.no-anim{transition:none}
+    .qslide{flex:0 0 33.3333%;padding:0 10px;display:flex}
+    .qtrack.one .qslide{flex-basis:100%}
+    .quote{width:100%;padding:32px;border-radius:var(--radius);border:1px solid var(--border);background:var(--card)}
     .carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--card);display:grid;place-items:center;cursor:pointer;transition:.2s;color:var(--cyan);font-size:1.2rem;z-index:10}
     .carousel-arrow:hover{border-color:var(--cyan);background:rgba(6,182,212,.1)}
     .carousel-arrow.prev{left:-60px}
     .carousel-arrow.next{right:-60px}
+    @media (max-width:1180px){
+      .quotes-container{margin-bottom:40px}
+      .carousel-arrow{top:auto;bottom:-60px;transform:none}
+      .carousel-arrow.prev{left:calc(50% - 52px)}
+      .carousel-arrow.next{right:auto;left:calc(50% + 8px)}
+    }
     .stars{color:#fbbf24;margin-bottom:16px;letter-spacing:3px}
     .quote p{margin-bottom:24px;font-size:.95rem}
     .who{display:flex;gap:12px;align-items:center}
@@ -214,7 +223,7 @@
 
     /* RESPONSIVE */
     @media (max-width:960px){
-      .services,.quotes,.pricing{grid-template-columns:1fr}
+      .services,.pricing{grid-template-columns:1fr}
       .steps{grid-template-columns:repeat(2,1fr)}
       .works{grid-template-columns:1fr}
       .contact{grid-template-columns:1fr;padding:40px 28px}
@@ -363,7 +372,7 @@
   </div>
 </section>
 
-<section class="block" id="contatti" style="padding-top:0;padding-bottom:80px">
+<section class="block" id="contatti" style="padding-top:50px;padding-bottom:80px">
   <div class="container">
     <div class="contact reveal">
       <div class="blob b1"></div><div class="blob b2"></div>
@@ -473,50 +482,87 @@
     c.style.setProperty('--my', (e.clientY - r.top) + 'px');
   }));
 
-  // Quotes carousel autoplay + frecce
-  const carousel = document.getElementById('quotesCarousel');
-  const quotes = carousel.querySelectorAll('.quote');
-  const prevBtn = document.getElementById('prevQuote');
-  const nextBtn = document.getElementById('nextQuote');
-  let currentIndex = 0;
-  let autoplayInterval;
-  
-  function updateQuotes() {
-    quotes.forEach(q => q.style.display = 'none');
-    const startIdx = currentIndex % quotes.length;
-    for (let i = 0; i < 3 && i < quotes.length; i++) {
-      quotes[(startIdx + i) % quotes.length].style.display = 'block';
+  // Quotes carousel circolare: 3 slide su desktop, 1 su mobile, autoplay + frecce + swipe
+  (function () {
+    const viewport = document.getElementById('quotesCarousel');
+    const originals = Array.from(viewport.querySelectorAll('.quote'));
+    const prevBtn = document.getElementById('prevQuote');
+    const nextBtn = document.getElementById('nextQuote');
+    const n = originals.length;
+    const mq = window.matchMedia('(min-width:900px)');
+    const track = document.createElement('div');
+    track.className = 'qtrack';
+    viewport.innerHTML = '';
+    viewport.appendChild(track);
+
+    let perView = 3, index = 0, busy = false, timer = null;
+
+    const slide = el => {
+      const d = document.createElement('div');
+      d.className = 'qslide';
+      d.appendChild(el.cloneNode(true));
+      return d;
+    };
+
+    function place(animate) {
+      track.classList.toggle('no-anim', !animate);
+      track.style.transform = `translateX(${-(index + perView) * (100 / perView)}%)`;
+      if (!animate) void track.offsetWidth; // forza il reflow prima della prossima animazione
     }
-  }
-  
-  function nextSlide() {
-    currentIndex++;
-    updateQuotes();
-    resetAutoplay();
-  }
-  
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
-    updateQuotes();
-    resetAutoplay();
-  }
-  
-  function resetAutoplay() {
-    clearInterval(autoplayInterval);
-    autoplayInterval = setInterval(() => {
-      currentIndex++;
-      updateQuotes();
-    }, 5000);
-  }
-  
-  nextBtn.addEventListener('click', nextSlide);
-  prevBtn.addEventListener('click', prevSlide);
-  
-  updateQuotes();
-  autoplayInterval = setInterval(() => {
-    currentIndex++;
-    updateQuotes();
-  }, 5000);
+
+    function build() {
+      perView = mq.matches ? 3 : 1;
+      track.classList.toggle('one', perView === 1);
+      track.innerHTML = '';
+      for (let i = n - perView; i < n; i++) track.appendChild(slide(originals[i]));   // cloni in testa
+      originals.forEach(el => track.appendChild(slide(el)));                          // slide reali
+      for (let i = 0; i < perView; i++) track.appendChild(slide(originals[i]));       // cloni in coda
+      index = 0;
+      busy = false;
+      place(false);
+    }
+
+    function move(dir) {
+      if (busy) return;
+      busy = true;
+      index += dir;
+      place(true);
+      setTimeout(() => {
+        // salto invisibile quando si esce dalla serie reale: il giro è infinito
+        if (index >= n) index -= n;
+        if (index < 0) index += n;
+        place(false);
+        busy = false;
+      }, 620);
+    }
+
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(() => move(1), 5000);
+    }
+
+    nextBtn.addEventListener('click', () => { move(1); restart(); });
+    prevBtn.addEventListener('click', () => { move(-1); restart(); });
+
+    // swipe su touch
+    let x0 = null;
+    viewport.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+    viewport.addEventListener('touchend', e => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      x0 = null;
+      if (Math.abs(dx) > 40) { move(dx < 0 ? 1 : -1); restart(); }
+    }, { passive: true });
+
+    // pausa con il mouse sopra (solo desktop)
+    const box = viewport.parentElement;
+    box.addEventListener('mouseenter', () => clearInterval(timer));
+    box.addEventListener('mouseleave', restart);
+
+    mq.addEventListener('change', build);
+    build();
+    restart();
+  })();
 
   // Il form invia direttamente a Formspree (action HTML), nessun JS necessario
 </script>
