@@ -128,7 +128,7 @@
     .works{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
     .work{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:var(--bg2);transition:.4s}
     .work:hover{transform:translateY(-6px)}
-    .work-visual{aspect-ratio:16/10;position:relative;overflow:hidden;display:grid;place-items:center}
+    .work-visual{height:280px;position:relative;overflow:hidden;display:grid;place-items:center}
     .mock{width:78%;height:74%;border-radius:12px;background:rgba(255,255,255,.95);box-shadow:0 30px 60px -20px rgba(0,0,0,.6);transition:.5s;overflow:hidden}
     .work:hover .mock{transform:scale(1.05) rotate(-1deg)}
     .mock-bar{height:22px;background:#e9e9ef;display:flex;gap:6px;align-items:center;padding:0 10px}
@@ -297,10 +297,10 @@
       <p>Alcuni progetti recenti. Ogni sito è diverso, perché ogni attività è diversa.</p>
     </div>
     <div class="works">
-      <a href="#" class="work reveal"><div class="work-visual w1"><img src="./Io_condo.png" style="width:100%;height:100%;object-fit:cover;" alt="Il mio Condominio"/></div><div class="work-info"><div><h3>Il mio Condominio</h3><span>Web app · Gestione condominiale</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
-      <a href="#" class="work reveal"><div class="work-visual w2"><img src="./studio_legale.png" style="width:100%;height:100%;object-fit:cover;" alt="Studio Legale Rossi"/></div><div class="work-info"><div><h3>Studio Legale Rossi</h3><span>Sito vetrina · Professionisti</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
-      <a href="https://kepos-taormina-sigma.vercel.app/menu" target="_blank" class="work reveal"><div class="work-visual w3"><img src="./kepos.png" style="width:100%;height:100%;object-fit:cover;" alt="Kepos Taormina"/></div><div class="work-info"><div><h3>Kepos Taormina</h3><span>Sito ristorante · Ristorazione</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
-      <a href="#" class="work reveal"><div class="work-visual w4"><img src="./greenshop.png" style="width:100%;height:100%;object-fit:cover;" alt="GreenShop"/></div><div class="work-info"><div><h3>GreenShop</h3><span>E-commerce · Prodotti bio</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
+      <a href="#" class="work reveal"><div class="work-visual w1"><img src="./Io_condo.png" style="max-width:100%;max-height:100%;object-fit:contain;" alt="Il mio Condominio"/></div><div class="work-info"><div><h3>Il mio Condominio</h3><span>Web app · Gestione condominiale</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
+      <a href="#" class="work reveal"><div class="work-visual w2"><img src="./studio_legale.png" style="max-width:100%;max-height:100%;object-fit:contain;" alt="Studio Legale Rossi"/></div><div class="work-info"><div><h3>Studio Legale Rossi</h3><span>Sito vetrina · Professionisti</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
+      <a href="https://kepos-taormina-sigma.vercel.app/menu" target="_blank" class="work reveal"><div class="work-visual w3"><img src="./kepos.png" style="max-width:100%;max-height:100%;object-fit:contain;" alt="Kepos Taormina"/></div><div class="work-info"><div><h3>Kepos Taormina</h3><span>Sito ristorante · Ristorazione</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
+      <a href="#" class="work reveal"><div class="work-visual w4"><img src="./greenshop.png" style="max-width:100%;max-height:100%;object-fit:contain;" alt="GreenShop"/></div><div class="work-info"><div><h3>GreenShop</h3><span>E-commerce · Prodotti bio</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
     </div>
   </div>
 </section>
