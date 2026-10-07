@@ -377,7 +377,8 @@
           <a href="#"><i class="fa-solid fa-location-dot"></i>Roma · Lavoro anche da remoto</a>
         </div>
       </div>
-      <form id="form">
+      <form id="form" action="https://formspree.io/f/xwlvllvp" method="POST" accept-charset="UTF-8">
+        <input type="hidden" name="_subject" value="Nuova richiesta dal sito M&amp;F Studio">
         <input name="nome" placeholder="Nome e cognome" required="">
         <input name="email" type="email" placeholder="Email" required="">
         <select name="tipo">
@@ -386,7 +387,6 @@
         <textarea name="messaggio" placeholder="Raccontami il tuo progetto…" required=""></textarea>
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0" aria-hidden="true">
         <button class="btn btn-primary" type="submit" style="justify-content:center">Invia richiesta <i class="fa-solid fa-paper-plane"></i></button>
-        <p id="formStatus" role="status" style="display:none;margin:12px 0 0;font-size:.92rem;text-align:center"></p>
       </form>
     </div>
   </div>
@@ -518,54 +518,7 @@
     updateQuotes();
   }, 5000);
 
-  // Form -> invia la richiesta via Formspree (arriva su Gmail + archivio dashboard)
-  // 1) Registrati su formspree.io con iltuositoweb.roma@gmail.com
-  // 2) Crea un form e incolla qui sotto il tuo endpoint (https://formspree.io/f/xxxxxxxx)
-  const FORM_ENDPOINT = 'https://formspree.io/f/xwlvllvp';
-
-  const formEl = document.getElementById('form');
-  const statusEl = document.getElementById('formStatus');
-  const submitBtn = formEl.querySelector('button[type=submit]');
-  const showStatus = (msg, ok) => {
-    statusEl.textContent = msg;
-    statusEl.style.color = ok ? '#34d399' : '#f87171';
-    statusEl.style.display = 'block';
-  };
-
-  formEl.addEventListener('submit', async e => {
-    e.preventDefault();
-    const f = new FormData(formEl);
-    if (f.get('_gotcha')) return; // anti-spam: i bot compilano questo campo nascosto
-
-    // Se l'endpoint non è ancora configurato, ripiega su mailto
-    if (FORM_ENDPOINT.includes('INSERISCI_QUI')) {
-      const subject = encodeURIComponent(`Richiesta ${f.get('tipo')} - ${f.get('nome')}`);
-      const body = encodeURIComponent(`Nome: ${f.get('nome')}\nEmail: ${f.get('email')}\nTipo: ${f.get('tipo')}\n\n${f.get('messaggio')}`);
-      location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-      return;
-    }
-
-    f.append('_subject', `Nuova richiesta ${f.get('tipo')} da ${f.get('nome')}`);
-    const label = submitBtn.innerHTML;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Invio in corso…';
-    try {
-      const r = await fetch(FORM_ENDPOINT, { method: 'POST', body: f, headers: { Accept: 'application/json' } });
-      if (!r.ok) {
-        const data = await r.json().catch(() => ({}));
-        const detail = data.error || (data.errors || []).map(x => x.message).join(', ') || ('HTTP ' + r.status);
-        throw new Error(detail);
-      }
-      formEl.reset();
-      showStatus('Richiesta inviata! Ti rispondo entro 24 ore.', true);
-    } catch (err) {
-      console.error('Formspree:', err);
-      showStatus(`Invio non riuscito (${err.message}). Scrivimi direttamente a ${EMAIL}`, false);
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = label;
-    }
-  });
+  // Il form invia direttamente a Formspree (action HTML), nessun JS necessario
 </script>
 
 </body>
