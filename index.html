@@ -166,13 +166,14 @@
     .price .btn{justify-content:center}
 
     /* TESTIMONIALS */
-    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .quote{padding:32px;border-radius:var(--radius);border:1px solid var(--border);background:var(--card)}
+    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
+    .quote{padding:32px;border-radius:var(--radius);border:1px solid var(--border);background:var(--card);animation:slideIn .5s ease}
+    @keyframes slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
     .stars{color:#fbbf24;margin-bottom:16px;letter-spacing:3px}
-    .quote p{margin-bottom:24px}
+    .quote p{margin-bottom:24px;font-size:.95rem}
     .who{display:flex;gap:12px;align-items:center}
     .avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:700;color:#fff;font-size:.9rem}
-    .who small{display:block;color:var(--muted)}
+    .who small{display:block;color:var(--muted);font-size:.85rem}
 
     /* CTA / CONTACT */
     .contact{position:relative;border-radius:32px;padding:72px;overflow:hidden;background:var(--bg2);border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:56px}
@@ -328,21 +329,27 @@
   </div>
 </section>
 
-<section class="block" style="padding-top:0">
+<section class="block" style="padding-bottom:40px">
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">Dicono di me</div>
       <h2>Clienti <span class="grad-text">felici</span>.</h2>
     </div>
-    <div class="quotes">
-      <div class="quote reveal"><div class="stars">★★★★★</div><p>"In tre settimane avevamo il sito online. Le richieste di preventivo sono raddoppiate."</p><div class="who"><div class="avatar">LR</div><div>Laura R.<small>Studio professionale</small></div></div></div>
-      <div class="quote reveal"><div class="stars">★★★★★</div><p>"Disponibile, veloce e preciso. Ha capito subito cosa volevamo comunicare."</p><div class="who"><div class="avatar">GM</div><div>Giorgio M.<small>Ristoratore</small></div></div></div>
-      <div class="quote reveal"><div class="stars">★★★★★</div><p>"Il nuovo e-commerce è semplicissimo da gestire. Finalmente vendiamo online sul serio."</p><div class="who"><div class="avatar">SC</div><div>Sara C.<small>Negozio bio</small></div></div></div>
+    <div class="quotes" id="quotesCarousel">
+      <div class="quote"><div class="stars">★★★★★</div><p>"In tre settimane avevamo il sito online. Le richieste di preventivo sono raddoppiate."</p><div class="who"><div class="avatar">LR</div><div>Laura R.<small>Studio professionale</small></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"Disponibile, veloce e preciso. Ha capito subito cosa volevamo comunicare."</p><div class="who"><div class="avatar">GM</div><div>Giorgio M.<small>Ristoratore</small></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"Il nuovo e-commerce è semplicissimo da gestire. Finalmente vendiamo online sul serio."</p><div class="who"><div class="avatar">SC</div><div>Sara C.<small>Negozio bio</small></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"Mi ha aiutato a trasformare la mia idea in realtà. Professionale e sempre disponibile."</p><div class="who"><div class="avatar">FS</div><div>Francesca S.<small>Freelancer</small></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"Il sito è bellissimo e le conversioni sono aumentate del 40%. Consigliato!"</p><div class="who"><div class="avatar">MC</div><div>Marco C.<small>E-commerce</small></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"Ottimo rapporto qualità-prezzo. Ha rispettato i tempi e ha superato le aspettative."</p><div class="who"><div class="avatar">AP</div><div>Andrea P.<small>Agenzia di viaggi</small></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"Un vero professionista. Il sito è velocissimo, bellissimo e facile da gestire."</p><div class="who"><div class="avatar">EG</div><div>Elena G.<small>Consulente HR</small></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"Ha creato un sito che comunica davvero i valori della mia azienda. Fantastico!"</p><div class="who"><div class="avatar">RD</div><div>Roberto D.<small>Startup Tech</small></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"Dopo il restyling le visite sono triplicate. Investimento che non mi pento."</p><div class="who"><div class="avatar">VB</div><div>Valentina B.<small>Studio fitness</small></div></div></div>
     </div>
   </div>
 </section>
 
-<section class="block" id="contatti" style="padding-top:0">
+<section class="block" id="contatti" style="padding-top:60px;padding-bottom:120px">
   <div class="container">
     <div class="contact reveal">
       <div class="blob b1"></div><div class="blob b2"></div>
@@ -449,6 +456,23 @@
     c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
     c.style.setProperty('--my', (e.clientY - r.top) + 'px');
   }));
+
+  // Quotes carousel autoplay
+  const carousel = document.getElementById('quotesCarousel');
+  const quotes = carousel.querySelectorAll('.quote');
+  let currentIndex = 0;
+  
+  function rotateQuotes() {
+    quotes.forEach(q => q.style.display = 'none');
+    const startIdx = currentIndex % quotes.length;
+    for (let i = 0; i < 3 && i < quotes.length; i++) {
+      quotes[(startIdx + i) % quotes.length].style.display = 'block';
+    }
+    currentIndex++;
+  }
+  
+  rotateQuotes();
+  setInterval(rotateQuotes, 5000);
 
   // Form -> apre il client email
   document.getElementById('form').addEventListener('submit', e => {
