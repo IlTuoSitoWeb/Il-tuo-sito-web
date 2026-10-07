@@ -45,7 +45,7 @@
     .menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer}
 
     /* HERO */
-    .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:100px 0 60px;overflow:hidden}
     .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;animation:float 14s ease-in-out infinite}
     .b1{width:520px;height:520px;background:var(--violet);top:-120px;left:-120px}
     .b2{width:440px;height:440px;background:var(--cyan);bottom:-140px;right:-80px;animation-delay:-5s}
@@ -99,14 +99,14 @@
     }
 
     /* MARQUEE */
-    .marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 0;overflow:hidden;background:var(--bg2)}
-    .track{display:flex;gap:56px;width:max-content;animation:scroll 30s linear infinite;font-family:var(--display);font-size:1.3rem;color:var(--muted)}
+    .marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;overflow:hidden;background:var(--bg2);margin:0 auto;width:min(1180px,92%)}
+    .track{display:flex;gap:56px;width:max-content;animation:scroll 30s linear infinite;font-family:var(--display);font-size:1.2rem;color:var(--muted)}
     .track span{display:flex;align-items:center;gap:56px;white-space:nowrap}
     .track i{color:var(--violet);font-size:.8rem}
     @keyframes scroll{to{transform:translateX(-50%)}}
 
     /* SECTIONS */
-    section.block{padding:120px 0}
+    section.block{padding:60px 0}
     .eyebrow{color:var(--cyan);font-weight:600;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}
     .section-head{max-width:680px;margin-bottom:64px}
     .section-head h2{font-size:clamp(2rem,4.5vw,3.4rem);margin-bottom:16px}
@@ -196,7 +196,7 @@
     select option{background:var(--bg2);color:var(--text)}
     textarea{min-height:130px;resize:vertical}
 
-    footer{padding:48px 0;border-top:1px solid var(--border);margin-top:120px;color:var(--muted);font-size:.9rem}
+    footer{padding:40px 0;border-top:1px solid var(--border);margin-top:60px;color:var(--muted);font-size:.9rem}
     .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
     .socials{display:flex;gap:12px}
     .socials a{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);display:grid;place-items:center;transition:.2s}
@@ -334,7 +334,7 @@
   </div>
 </section>
 
-<section class="block" style="padding:80px 0 30px">
+<section class="block" style="padding:50px 0 20px">
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">Dicono di me</div>
@@ -358,7 +358,7 @@
   </div>
 </section>
 
-<section class="block" id="contatti" style="padding-top:60px;padding-bottom:120px">
+<section class="block" id="contatti" style="padding-top:40px;padding-bottom:80px">
   <div class="container">
     <div class="contact reveal">
       <div class="blob b1"></div><div class="blob b2"></div>
