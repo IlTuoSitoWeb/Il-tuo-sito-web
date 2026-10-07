@@ -168,6 +168,7 @@
     .price li{display:flex;gap:10px;color:var(--muted);font-size:.95rem}
     .price li i{color:var(--cyan);margin-top:5px}
     .price .btn{justify-content:center}
+    .price .canone{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:-12px 0 24px;padding:6px 14px;border-radius:999px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.3);color:var(--cyan);font-size:.85rem;font-weight:600}
 
     /* TESTIMONIALS */
     .quotes-container{position:relative;margin-top:40px}
@@ -331,8 +332,8 @@
       <p>Prezzi indicativi. Ogni preventivo è su misura e gratuito.</p>
     </div>
     <div class="pricing">
-      <div class="price reveal"><h3>Start</h3><div class="sub">Per iniziare con il piede giusto</div><div class="amount">€490<small> una tantum</small></div><ul><li><i class="fa-solid fa-check"></i>Landing page singola</li><li><i class="fa-solid fa-check"></i>Design responsive</li><li><i class="fa-solid fa-check"></i>Modulo contatti</li><li><i class="fa-solid fa-check"></i>SEO di base</li></ul><a href="#contatti" class="btn btn-ghost">Scegli Start</a></div>
-      <div class="price featured reveal"><span class="badge">Più richiesto</span><h3>Business</h3><div class="sub">Il sito vetrina completo</div><div class="amount">€990<small> una tantum</small></div><ul><li><i class="fa-solid fa-check"></i>Fino a 6 pagine</li><li><i class="fa-solid fa-check"></i>Design personalizzato</li><li><i class="fa-solid fa-check"></i>SEO avanzata + Google Maps</li><li><i class="fa-solid fa-check"></i>Blog / news</li><li><i class="fa-solid fa-check"></i>3 mesi di assistenza</li></ul><a href="#contatti" class="btn btn-primary">Scegli Business</a></div>
+      <div class="price reveal"><h3>Start</h3><div class="sub">Per iniziare con il piede giusto</div><div class="amount">€490<small> una tantum</small></div><div class="canone"><i class="fa-solid fa-rotate"></i>+ €10/mese di canone</div><ul><li><i class="fa-solid fa-check"></i>Landing page singola</li><li><i class="fa-solid fa-check"></i>Design responsive</li><li><i class="fa-solid fa-check"></i>Modulo contatti</li><li><i class="fa-solid fa-check"></i>SEO di base</li></ul><a href="#contatti" class="btn btn-ghost">Scegli Start</a></div>
+      <div class="price featured reveal"><span class="badge">Più richiesto</span><h3>Business</h3><div class="sub">Il sito vetrina completo</div><div class="amount">€990<small> una tantum</small></div><div class="canone"><i class="fa-solid fa-rotate"></i>+ €10/mese di canone</div><ul><li><i class="fa-solid fa-check"></i>Fino a 6 pagine</li><li><i class="fa-solid fa-check"></i>Design personalizzato</li><li><i class="fa-solid fa-check"></i>SEO avanzata + Google Maps</li><li><i class="fa-solid fa-check"></i>Blog / news</li><li><i class="fa-solid fa-check"></i>3 mesi di assistenza</li></ul><a href="#contatti" class="btn btn-primary">Scegli Business</a></div>
       <div class="price reveal"><h3>Custom</h3><div class="sub">E-commerce e web app</div><div class="amount">Su misura</div><ul><li><i class="fa-solid fa-check"></i>Funzionalità personalizzate</li><li><i class="fa-solid fa-check"></i>Area riservata / login</li><li><i class="fa-solid fa-check"></i>Pagamenti online</li><li><i class="fa-solid fa-check"></i>Integrazioni e database</li></ul><a href="#contatti" class="btn btn-ghost">Parliamone</a></div>
     </div>
   </div>
@@ -383,7 +384,9 @@
           <option>Sito vetrina</option><option>E-commerce</option><option>Landing page</option><option>Web app</option><option>Altro</option>
         </select>
         <textarea name="messaggio" placeholder="Raccontami il tuo progetto…" required=""></textarea>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0" aria-hidden="true">
         <button class="btn btn-primary" type="submit" style="justify-content:center">Invia richiesta <i class="fa-solid fa-paper-plane"></i></button>
+        <p id="formStatus" role="status" style="display:none;margin:12px 0 0;font-size:.92rem;text-align:center"></p>
       </form>
     </div>
   </div>
@@ -515,13 +518,48 @@
     updateQuotes();
   }, 5000);
 
-  // Form -> apre il client email
-  document.getElementById('form').addEventListener('submit', e => {
+  // Form -> invia la richiesta via Formspree (arriva su Gmail + archivio dashboard)
+  // 1) Registrati su formspree.io con iltuositoweb.roma@gmail.com
+  // 2) Crea un form e incolla qui sotto il tuo endpoint (https://formspree.io/f/xxxxxxxx)
+  const FORM_ENDPOINT = 'https://formspree.io/f/xwlvllvp';
+
+  const formEl = document.getElementById('form');
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = formEl.querySelector('button[type=submit]');
+  const showStatus = (msg, ok) => {
+    statusEl.textContent = msg;
+    statusEl.style.color = ok ? '#34d399' : '#f87171';
+    statusEl.style.display = 'block';
+  };
+
+  formEl.addEventListener('submit', async e => {
     e.preventDefault();
-    const f = new FormData(e.target);
-    const subject = encodeURIComponent(`Richiesta ${f.get('tipo')} - ${f.get('nome')}`);
-    const body = encodeURIComponent(`Nome: ${f.get('nome')}\nEmail: ${f.get('email')}\nTipo: ${f.get('tipo')}\n\n${f.get('messaggio')}`);
-    location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    const f = new FormData(formEl);
+    if (f.get('_gotcha')) return; // anti-spam: i bot compilano questo campo nascosto
+
+    // Se l'endpoint non è ancora configurato, ripiega su mailto
+    if (FORM_ENDPOINT.includes('INSERISCI_QUI')) {
+      const subject = encodeURIComponent(`Richiesta ${f.get('tipo')} - ${f.get('nome')}`);
+      const body = encodeURIComponent(`Nome: ${f.get('nome')}\nEmail: ${f.get('email')}\nTipo: ${f.get('tipo')}\n\n${f.get('messaggio')}`);
+      location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+      return;
+    }
+
+    f.append('_subject', `Nuova richiesta ${f.get('tipo')} da ${f.get('nome')}`);
+    const label = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Invio in corso…';
+    try {
+      const r = await fetch(FORM_ENDPOINT, { method: 'POST', body: f, headers: { Accept: 'application/json' } });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      formEl.reset();
+      showStatus('Richiesta inviata! Ti rispondo entro 24 ore.', true);
+    } catch (err) {
+      showStatus(`Invio non riuscito. Scrivimi direttamente a ${EMAIL}`, false);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = label;
+    }
   });
 </script>
 
