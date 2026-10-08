@@ -1,571 +1,2026 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M&F Studio — Siti web che vendono</title>
-  <meta name="description" content="Progetto e sviluppo siti web veloci, moderni e pensati per portare clienti. Landing page, siti vetrina, e-commerce e web app.">
-  <meta property="og:title" content="M&F Studio — Siti web che vendono">
-  <meta property="og:description" content="Siti web veloci, moderni e pensati per portare clienti.">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0b0b12">
-  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;defs&gt;&lt;linearGradient id='g' x1='0' y1='0' x2='1' y2='1'&gt;&lt;stop offset='0' stop-color='%237c3aed'/&gt;&lt;stop offset='1' stop-color='%2306b6d4'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='100' height='100' rx='24' fill='url(%23g)'/&gt;&lt;text x='50' y='66' font-size='46' font-family='Arial' font-weight='800' text-anchor='middle' fill='white'&gt;M&F&lt;/text&gt;&lt;/svg&gt;">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root{
-      --bg:#0b0b12; --bg2:#12121c; --card:rgba(255,255,255,.04); --border:rgba(255,255,255,.08);
-      --text:#f4f4f8; --muted:#a1a1b5; --violet:#7c3aed; --cyan:#06b6d4; --pink:#ec4899;
-      --grad:linear-gradient(135deg,var(--violet),var(--cyan));
-      --radius:20px; --display:'Space Grotesk',system-ui,sans-serif; --sans:'Inter',system-ui,sans-serif;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:hidden}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1180px,92%);margin:0 auto}
-    .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-    h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.02em}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M&F Studio — Siti web che vendono</title>
+    <meta
+      name="description"
+      content="Progetto e sviluppo siti web veloci, moderni e pensati per portare clienti. Landing page, siti vetrina, e-commerce e web app."
+    />
+    <meta property="og:title" content="M&F Studio — Siti web che vendono" />
+    <meta
+      property="og:description"
+      content="Siti web veloci, moderni e pensati per portare clienti."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0b0b12" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;defs&gt;&lt;linearGradient id='g' x1='0' y1='0' x2='1' y2='1'&gt;&lt;stop offset='0' stop-color='%237c3aed'/&gt;&lt;stop offset='1' stop-color='%2306b6d4'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='100' height='100' rx='24' fill='url(%23g)'/&gt;&lt;text x='50' y='66' font-size='46' font-family='Arial' font-weight='800' text-anchor='middle' fill='white'&gt;M&F&lt;/text&gt;&lt;/svg&gt;"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg: #0b0b12;
+        --bg2: #12121c;
+        --card: rgba(255, 255, 255, 0.04);
+        --border: rgba(255, 255, 255, 0.08);
+        --text: #f4f4f8;
+        --muted: #a1a1b5;
+        --violet: #7c3aed;
+        --cyan: #06b6d4;
+        --pink: #ec4899;
+        --grad: linear-gradient(135deg, var(--violet), var(--cyan));
+        --radius: 20px;
+        --display: "Space Grotesk", system-ui, sans-serif;
+        --sans: "Inter", system-ui, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        width: min(1180px, 92%);
+        margin: 0 auto;
+      }
+      .grad-text {
+        background: var(--grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--display);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
 
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
-    nav.scrolled{background:rgba(11,11,18,.75);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
-    .logo{font-family:var(--display);font-weight:700;font-size:1.4rem;display:flex;align-items:center;gap:10px}
-    .logo-mark{width:36px;height:36px;border-radius:10px;background:var(--grad);display:grid;place-items:center;font-size:.9rem;color:#fff}
-    .nav-links{display:flex;gap:32px;font-size:.95rem;color:var(--muted)}
-    .nav-links a:hover{color:var(--text)}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:.95rem;transition:.25s;cursor:pointer;border:none;font-family:var(--sans)}
-    .btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 30px -10px rgba(124,58,237,.7)}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(124,58,237,.9)}
-    .btn-ghost{border:1px solid var(--border);color:var(--text);background:var(--card)}
-    .btn-ghost:hover{border-color:rgba(255,255,255,.3)}
-    .menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer}
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        transition: 0.3s;
+      }
+      nav.scrolled {
+        background: rgba(11, 11, 18, 0.75);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 76px;
+      }
+      .logo {
+        font-family: var(--display);
+        font-weight: 700;
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo-image {
+        width: 120px;
+        height: 64px;
+        object-fit: cover;
+        object-position: center;
+        mix-blend-mode: screen;
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+      .nav-links a:hover {
+        color: var(--text);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 26px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: 0.25s;
+        cursor: pointer;
+        border: none;
+        font-family: var(--sans);
+      }
+      .btn-primary {
+        background: var(--grad);
+        color: #fff;
+        box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.7);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px -10px rgba(124, 58, 237, 0.9);
+      }
+      .btn-ghost {
+        border: 1px solid var(--border);
+        color: var(--text);
+        background: var(--card);
+      }
+      .btn-ghost:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      .menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text);
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
 
-    /* HERO */
-    .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:100px 0 60px;overflow:hidden}
-    .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;animation:float 14s ease-in-out infinite}
-    .b1{width:520px;height:520px;background:var(--violet);top:-120px;left:-120px}
-    .b2{width:440px;height:440px;background:var(--cyan);bottom:-140px;right:-80px;animation-delay:-5s}
-    .b3{width:300px;height:300px;background:var(--pink);top:40%;left:55%;opacity:.3;animation-delay:-9s}
-    @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.08)}}
-    .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
-    .hero-content{position:relative;z-index:2;text-align:center;max-width:920px;margin:0 auto}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-size:.85rem;color:var(--muted);margin-bottom:28px}
-    .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 12px #22c55e;animation:pulse 2s infinite}
-    @keyframes pulse{50%{opacity:.4}}
-    .hero h1{font-size:clamp(2.6rem,7vw,5.6rem);font-weight:700;margin-bottom:24px}
-    .rotator{display:inline-block;min-width:4ch}
-    .hero p{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--muted);max-width:640px;margin:0 auto 40px}
-    .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+      /* HERO */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 100px 0 60px;
+        overflow: hidden;
+      }
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(90px);
+        opacity: 0.55;
+        animation: float 14s ease-in-out infinite;
+      }
+      .b1 {
+        width: 520px;
+        height: 520px;
+        background: var(--violet);
+        top: -120px;
+        left: -120px;
+      }
+      .b2 {
+        width: 440px;
+        height: 440px;
+        background: var(--cyan);
+        bottom: -140px;
+        right: -80px;
+        animation-delay: -5s;
+      }
+      .b3 {
+        width: 300px;
+        height: 300px;
+        background: var(--pink);
+        top: 40%;
+        left: 55%;
+        opacity: 0.3;
+        animation-delay: -9s;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(40px, -30px) scale(1.08);
+        }
+      }
+      .grid-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+          );
+        background-size: 60px 60px;
+        mask-image: radial-gradient(
+          ellipse at center,
+          #000 30%,
+          transparent 75%
+        );
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 920px;
+        margin: 0 auto;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 28px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #22c55e;
+        box-shadow: 0 0 12px #22c55e;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        50% {
+          opacity: 0.4;
+        }
+      }
+      .hero h1 {
+        font-size: clamp(2.6rem, 7vw, 5.6rem);
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+      .rotator {
+        display: inline-block;
+        min-width: 4ch;
+      }
+      .hero p {
+        font-size: clamp(1.05rem, 2vw, 1.3rem);
+        color: var(--muted);
+        max-width: 640px;
+        margin: 0 auto 40px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
 
-    /* STATS */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 80px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      align-items: stretch;
-    }
+      /* STATS */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 80px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: stretch;
+      }
 
-    .stat {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 30px 20px;
-      border-radius: 16px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      min-height: 160px;
-    }
+      .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 20px;
+        border-radius: 16px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        min-height: 160px;
+      }
 
-    .stat strong {
-      display: block;
-      font-family: var(--display);
-      font-size: clamp(2.6rem,4.2vw,4rem);
-      white-space: nowrap;
-      line-height: 1.1;
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
+      .stat strong {
+        display: block;
+        font-family: var(--display);
+        font-size: clamp(2.6rem, 4.2vw, 4rem);
+        white-space: nowrap;
+        line-height: 1.1;
+        margin-bottom: 12px;
+        font-weight: 700;
+      }
 
-    .stat > span {
-      color: var(--muted);
-      font-size: 1rem;
-      text-align: center;
-      font-weight: 500;
-    }
+      .stat > span {
+        color: var(--muted);
+        font-size: 1rem;
+        text-align: center;
+        font-weight: 500;
+      }
 
-    /* MARQUEE */
-    .marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;overflow:hidden;background:var(--bg2);margin:0 auto;width:min(1180px,92%)}
-    .track{display:flex;gap:56px;width:max-content;animation:scroll 30s linear infinite;font-family:var(--display);font-size:1.2rem;color:var(--muted)}
-    .track span{display:flex;align-items:center;gap:56px;white-space:nowrap}
-    .track i{color:var(--violet);font-size:.8rem}
-    @keyframes scroll{to{transform:translateX(-50%)}}
+      /* MARQUEE */
+      .marquee {
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: 16px 0;
+        overflow: hidden;
+        background: var(--bg2);
+        margin: 0 auto;
+        width: min(1180px, 92%);
+      }
+      .track {
+        display: flex;
+        gap: 56px;
+        width: max-content;
+        animation: scroll 30s linear infinite;
+        font-family: var(--display);
+        font-size: 1.2rem;
+        color: var(--muted);
+      }
+      .track span {
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        white-space: nowrap;
+      }
+      .track i {
+        color: var(--violet);
+        font-size: 0.8rem;
+      }
+      @keyframes scroll {
+        to {
+          transform: translateX(-50%);
+        }
+      }
 
-    /* SECTIONS */
-    section.block{padding:60px 0}
-    .eyebrow{color:var(--cyan);font-weight:600;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
-    .section-head{max-width:680px;margin-bottom:30px}
-    .section-head h2{font-size:clamp(2rem,4.5vw,3.4rem);margin-bottom:16px}
-    .section-head p{color:var(--muted);font-size:1.1rem}
+      /* SECTIONS */
+      section.block {
+        padding: 60px 0;
+      }
+      .eyebrow {
+        color: var(--cyan);
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .section-head {
+        max-width: 680px;
+        margin-bottom: 30px;
+      }
+      .section-head h2 {
+        font-size: clamp(2rem, 4.5vw, 3.4rem);
+        margin-bottom: 16px;
+      }
+      .section-head p {
+        color: var(--muted);
+        font-size: 1.1rem;
+      }
 
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;transition:.35s;overflow:hidden}
-    .card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(124,58,237,.18),transparent 40%);opacity:0;transition:.3s}
-    .card:hover{transform:translateY(-6px);border-color:rgba(124,58,237,.5)}
-    .card:hover::before{opacity:1}
-    .card > *{position:relative}
-    .icon{width:56px;height:56px;border-radius:16px;background:var(--grad);display:grid;place-items:center;font-size:1.3rem;margin-bottom:24px}
-    .card h3{font-size:1.4rem;margin-bottom:12px}
-    .card p{color:var(--muted)}
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .card {
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 36px;
+        transition: 0.35s;
+        overflow: hidden;
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          400px circle at var(--mx, 50%) var(--my, 50%),
+          rgba(124, 58, 237, 0.18),
+          transparent 40%
+        );
+        opacity: 0;
+        transition: 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(124, 58, 237, 0.5);
+      }
+      .card:hover::before {
+        opacity: 1;
+      }
+      .card > * {
+        position: relative;
+      }
+      .icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: var(--grad);
+        display: grid;
+        place-items: center;
+        font-size: 1.3rem;
+        margin-bottom: 24px;
+      }
+      .card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }
+      .card p {
+        color: var(--muted);
+      }
 
-    /* PORTFOLIO */
-    .works{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .work{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:var(--bg2);transition:.4s}
-    .work:hover{transform:translateY(-6px)}
-    .work-visual{height:280px;position:relative;overflow:hidden;display:grid;place-items:center}
-    .mock{width:78%;height:74%;border-radius:12px;background:rgba(255,255,255,.95);box-shadow:0 30px 60px -20px rgba(0,0,0,.6);transition:.5s;overflow:hidden}
-    .work:hover .mock{transform:scale(1.05) rotate(-1deg)}
-    .mock-bar{height:22px;background:#e9e9ef;display:flex;gap:6px;align-items:center;padding:0 10px}
-    .mock-bar i{width:8px;height:8px;border-radius:50%;background:#ccc;display:block}
-    .mock-body{padding:16px;display:grid;gap:10px}
-    .mock-body div{height:10px;border-radius:6px;background:#e5e5ee}
-    .mock-body .h{height:22px;width:60%}
-    .w1{background:linear-gradient(135deg,#7c3aed,#c026d3)}
-    .w2{background:linear-gradient(135deg,#06b6d4,#3b82f6)}
-    .w3{background:linear-gradient(135deg,#f97316,#ec4899)}
-    .w4{background:linear-gradient(135deg,#10b981,#06b6d4)}
-    .work-info{padding:24px 28px;display:flex;justify-content:space-between;align-items:center}
-    .work-info h3{font-size:1.25rem}
-    .work-info span{color:var(--muted);font-size:.9rem}
-    .arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);display:grid;place-items:center;transition:.3s}
-    .work:hover .arrow{background:var(--grad);border-color:transparent;transform:rotate(-45deg)}
+      /* PORTFOLIO */
+      .works {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      .work {
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: var(--bg2);
+        transition: 0.4s;
+      }
+      .work:hover {
+        transform: translateY(-6px);
+      }
+      .work-visual {
+        height: 280px;
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+      }
+      .work-visual picture {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+      }
+      .work-visual img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      .mobile-preview {
+        display: none;
+      }
+      .mobile-preview h4,
+      .mobile-preview p {
+        margin: 0;
+      }
+      .mock {
+        width: 78%;
+        height: 74%;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+        transition: 0.5s;
+        overflow: hidden;
+      }
+      .work:hover .mock {
+        transform: scale(1.05) rotate(-1deg);
+      }
+      .mock-bar {
+        height: 22px;
+        background: #e9e9ef;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        padding: 0 10px;
+      }
+      .mock-bar i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+        display: block;
+      }
+      .mock-body {
+        padding: 16px;
+        display: grid;
+        gap: 10px;
+      }
+      .mock-body div {
+        height: 10px;
+        border-radius: 6px;
+        background: #e5e5ee;
+      }
+      .mock-body .h {
+        height: 22px;
+        width: 60%;
+      }
+      .w1 {
+        background: linear-gradient(135deg, #7c3aed, #c026d3);
+      }
+      .w2 {
+        background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      }
+      .w3 {
+        background: linear-gradient(135deg, #f97316, #ec4899);
+      }
+      .w4 {
+        background: linear-gradient(135deg, #10b981, #06b6d4);
+      }
+      .work-info {
+        padding: 24px 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .work-info h3 {
+        font-size: 1.25rem;
+      }
+      .work-info span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .arrow {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        display: grid;
+        place-items: center;
+        transition: 0.3s;
+      }
+      .work:hover .arrow {
+        background: var(--grad);
+        border-color: transparent;
+        transform: rotate(-45deg);
+      }
 
-    /* PROCESS */
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
-    .step{padding:32px;border-radius:var(--radius);border:1px solid var(--border);background:var(--card)}
-    .step::before{counter-increment:s;content:"0" counter(s);font-family:var(--display);font-size:3rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-bottom:12px}
-    .step h3{font-size:1.2rem;margin-bottom:8px}
-    .step p{color:var(--muted);font-size:.95rem}
+      /* PROCESS */
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        counter-reset: s;
+      }
+      .step {
+        padding: 32px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card);
+      }
+      .step::before {
+        counter-increment: s;
+        content: "0" counter(s);
+        font-family: var(--display);
+        font-size: 3rem;
+        font-weight: 700;
+        background: var(--grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: block;
+        margin-bottom: 12px;
+      }
+      .step h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+      .step p {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
 
-    /* PRICING */
-    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
-    .price{display:flex;flex-direction:column;padding:40px 32px;border-radius:var(--radius);border:1px solid var(--border);background:var(--card)}
-    .price.featured{background:linear-gradient(var(--bg2),var(--bg2)) padding-box,var(--grad) border-box;border:2px solid transparent;transform:scale(1.03);position:relative}
-    .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--grad);padding:5px 14px;border-radius:999px;font-size:.78rem;font-weight:600;color:#fff}
-    .price h3{font-size:1.3rem;margin-bottom:6px}
-    .price .sub{color:var(--muted);font-size:.92rem;margin-bottom:24px}
-    .amount{font-family:var(--display);font-size:2.8rem;font-weight:700;margin-bottom:24px}
-    .amount small{font-size:1rem;color:var(--muted);font-weight:500}
-    .price ul{list-style:none;display:grid;gap:12px;margin-bottom:32px;flex:1}
-    .price li{display:flex;gap:10px;color:var(--muted);font-size:.95rem}
-    .price li i{color:var(--cyan);margin-top:5px}
-    .price .btn{justify-content:center}
-    .price .canone{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:-12px 0 24px;padding:6px 14px;border-radius:999px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.3);color:var(--cyan);font-size:.85rem;font-weight:600}
+      /* PRICING */
+      .pricing {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        align-items: stretch;
+      }
+      .price {
+        display: flex;
+        flex-direction: column;
+        padding: 40px 32px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card);
+      }
+      .price.featured {
+        background:
+          linear-gradient(var(--bg2), var(--bg2)) padding-box,
+          var(--grad) border-box;
+        border: 2px solid transparent;
+        transform: scale(1.03);
+        position: relative;
+      }
+      .badge {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--grad);
+        padding: 5px 14px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #fff;
+      }
+      .price h3 {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+      }
+      .price .sub {
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin-bottom: 24px;
+      }
+      .amount {
+        font-family: var(--display);
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+      .amount small {
+        font-size: 1rem;
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .price ul {
+        list-style: none;
+        display: grid;
+        gap: 12px;
+        margin-bottom: 32px;
+        flex: 1;
+      }
+      .price li {
+        display: flex;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .price li i {
+        color: var(--cyan);
+        margin-top: 5px;
+      }
+      .price .btn {
+        justify-content: center;
+      }
+      .price .canone {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        align-self: flex-start;
+        margin: -12px 0 24px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(6, 182, 212, 0.1);
+        border: 1px solid rgba(6, 182, 212, 0.3);
+        color: var(--cyan);
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
 
-    /* TESTIMONIALS */
-    .quotes-container{position:relative;max-width:1000px;margin:40px auto 0}
-    .quotes{overflow:hidden;touch-action:pan-y}
-    .qtrack{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1);will-change:transform}
-    .qtrack.no-anim{transition:none}
-    .qslide{flex:0 0 33.3333%;padding:0 10px;display:flex}
-    .qtrack.one .qslide{flex-basis:100%}
-    .quote{width:100%;padding:32px;border-radius:var(--radius);border:1px solid var(--border);background:var(--card)}
-    .carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--card);display:grid;place-items:center;cursor:pointer;transition:.2s;color:var(--cyan);font-size:1.2rem;z-index:10}
-    .carousel-arrow:hover{border-color:var(--cyan);background:rgba(6,182,212,.1)}
-    .carousel-arrow.prev{left:-60px}
-    .carousel-arrow.next{right:-60px}
-    @media (max-width:1180px){
-      .quotes-container{margin-bottom:40px}
-      .carousel-arrow{top:auto;bottom:-60px;transform:none}
-      .carousel-arrow.prev{left:calc(50% - 52px)}
-      .carousel-arrow.next{right:auto;left:calc(50% + 8px)}
-    }
-    .stars{color:#fbbf24;margin-bottom:16px;letter-spacing:3px}
-    .quote p{margin-bottom:24px;font-size:.95rem}
-    .who{display:flex;gap:12px;align-items:center}
-    .avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:700;color:#fff;font-size:.9rem}
-    .who small{display:block;color:var(--muted);font-size:.85rem}
+      /* TESTIMONIALS */
+      .quotes-container {
+        position: relative;
+        max-width: 1000px;
+        margin: 40px auto 0;
+      }
+      .quotes {
+        overflow: hidden;
+        touch-action: pan-y;
+      }
+      .qtrack {
+        display: flex;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+      }
+      .qtrack.no-anim {
+        transition: none;
+      }
+      .qslide {
+        flex: 0 0 33.3333%;
+        padding: 0 10px;
+        display: flex;
+      }
+      .qtrack.one .qslide {
+        flex-basis: 100%;
+      }
+      .quote {
+        width: 100%;
+        padding: 32px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card);
+      }
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        background: var(--card);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition: 0.2s;
+        color: var(--cyan);
+        font-size: 1.2rem;
+        z-index: 10;
+      }
+      .carousel-arrow:hover {
+        border-color: var(--cyan);
+        background: rgba(6, 182, 212, 0.1);
+      }
+      .carousel-arrow.prev {
+        left: -60px;
+      }
+      .carousel-arrow.next {
+        right: -60px;
+      }
+      @media (max-width: 1180px) {
+        .quotes-container {
+          margin-bottom: 40px;
+        }
+        .carousel-arrow {
+          top: auto;
+          bottom: -60px;
+          transform: none;
+        }
+        .carousel-arrow.prev {
+          left: calc(50% - 52px);
+        }
+        .carousel-arrow.next {
+          right: auto;
+          left: calc(50% + 8px);
+        }
+      }
+      .stars {
+        color: #fbbf24;
+        margin-bottom: 16px;
+        letter-spacing: 3px;
+      }
+      .quote p {
+        margin-bottom: 24px;
+        font-size: 0.95rem;
+      }
+      .who {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--grad);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+      .who small {
+        display: block;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
 
-    /* CTA / CONTACT */
-    .contact{position:relative;border-radius:32px;padding:64px 72px;overflow:hidden;background:var(--bg2);border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:56px}
-    .contact .blob{opacity:.35;position:absolute;z-index:0;pointer-events:none}
-    .contact > *:not(.blob){position:relative;z-index:1}
-    .contact h2{font-size:clamp(2rem,4vw,3.2rem);margin-bottom:20px}
-    .contact p{color:var(--muted);margin-bottom:28px}
-    .contact-list{display:grid;gap:14px}
-    .contact-list a{display:flex;gap:14px;align-items:center;color:var(--muted);transition:.2s}
-    .contact-list a:hover{color:var(--text)}
-    .contact-list i{width:40px;height:40px;border-radius:12px;background:var(--card);border:1px solid var(--border);display:grid;place-items:center;color:var(--cyan)}
-    form{display:grid;gap:14px}
-    input,textarea,select{width:100%;padding:16px 18px;border-radius:14px;border:1px solid var(--border);background:rgba(0,0,0,.3);color:var(--text);font-family:var(--sans);font-size:.95rem;transition:.2s}
-    input:focus,textarea:focus,select:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 4px rgba(124,58,237,.2)}
-    select option{background:var(--bg2);color:var(--text)}
-    textarea{min-height:130px;resize:vertical}
+      /* CTA / CONTACT */
+      .contact {
+        position: relative;
+        border-radius: 32px;
+        padding: 64px 72px;
+        overflow: hidden;
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+      }
+      .contact .blob {
+        opacity: 0.35;
+        position: absolute;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .contact > *:not(.blob) {
+        position: relative;
+        z-index: 1;
+      }
+      .contact h2 {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        margin-bottom: 20px;
+      }
+      .contact p {
+        color: var(--muted);
+        margin-bottom: 28px;
+      }
+      .contact-list {
+        display: grid;
+        gap: 14px;
+      }
+      .contact-list a {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        color: var(--muted);
+        transition: 0.2s;
+      }
+      .contact-list a:hover {
+        color: var(--text);
+      }
+      .contact-list i {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        display: grid;
+        place-items: center;
+        color: var(--cyan);
+      }
+      form {
+        display: grid;
+        gap: 14px;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 16px 18px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--text);
+        font-family: var(--sans);
+        font-size: 0.95rem;
+        transition: 0.2s;
+      }
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: var(--violet);
+        box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2);
+      }
+      select option {
+        background: var(--bg2);
+        color: var(--text);
+      }
+      textarea {
+        min-height: 130px;
+        resize: vertical;
+      }
 
-    footer{padding:40px 0;border-top:1px solid var(--border);margin-top:60px;color:var(--muted);font-size:.9rem}
-    .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-    .socials{display:flex;gap:12px}
-    .socials a{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);display:grid;place-items:center;transition:.2s}
-    .socials a:hover{background:var(--grad);border-color:transparent;color:#fff}
+      footer {
+        padding: 40px 0;
+        border-top: 1px solid var(--border);
+        margin-top: 60px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .socials {
+        display: flex;
+        gap: 12px;
+      }
+      .socials a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        display: grid;
+        place-items: center;
+        transition: 0.2s;
+      }
+      .socials a:hover {
+        background: var(--grad);
+        border-color: transparent;
+        color: #fff;
+      }
 
-    /* REVEAL */
-    .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
-    .reveal.in{opacity:1;transform:none}
-    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+      /* REVEAL */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
 
-    /* RESPONSIVE */
-    @media (max-width:960px){
-      .services,.pricing{grid-template-columns:1fr}
-      .steps{grid-template-columns:repeat(2,1fr)}
-      .works{grid-template-columns:1fr}
-      .contact{grid-template-columns:1fr;padding:40px 28px}
-      .price.featured{transform:none}
-      .nav-links{position:fixed;top:76px;left:0;right:0;flex-direction:column;background:rgba(11,11,18,.97);padding:28px 6%;gap:20px;display:none;border-bottom:1px solid var(--border)}
-      .nav-links.open{display:flex}
-      .menu-btn{display:block}
-      .nav-cta{display:none}
-    }
-    @media (max-width:560px){
-      .steps{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr;gap:16px}
-      section.block{padding:80px 0}
-    }
-  </style>
-</head>
-<body>
-
-<nav id="nav">
-  <div class="container nav-inner">
-    <a href="#" class="logo"><span class="logo-mark">M&F</span>Studio</a>
-    <div class="nav-links" id="links">
-      <a href="#servizi">Servizi</a>
-      <a href="#lavori">Lavori</a>
-      <a href="#processo">Metodo</a>
-      <a href="#prezzi">Prezzi</a>
-      <a href="#contatti">Contatti</a>
-    </div>
-    <a href="#contatti" class="btn btn-primary nav-cta">Parliamone <i class="fa-solid fa-arrow-right"></i></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Apri menu"><i class="fa-solid fa-bars"></i></button>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="grid-bg"></div>
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-  <div class="container hero-content">
-    <div class="pill"><span class="dot"></span> Disponibile per nuovi progetti</div>
-    <h1>Siti web che<br><span class="grad-text rotator" id="rotator">vendono</span>.</h1>
-    <p>Progetto e sviluppo siti veloci, moderni e su misura. Niente template anonimi: un sito che racconta la tua attività e porta clienti veri.</p>
-    <div class="hero-cta">
-      <a href="#contatti" class="btn btn-primary">Richiedi un preventivo gratuito <i class="fa-solid fa-arrow-right"></i></a>
-      <a href="#lavori" class="btn btn-ghost"><i class="fa-regular fa-circle-play"></i> Guarda i lavori</a>
-    </div>
-    <div class="stats">
-      <div class="stat"><strong><span class="count" data-to="250">0</span>+</strong><span>Progetti consegnati</span></div>
-      <div class="stat"><strong><span class="count" data-to="98">0</span>%</strong><span>Clienti soddisfatti</span></div>
-      <div class="stat"><strong><span class="count" data-to="2">0</span> Sett.</strong><span>Tempo realizzazione</span></div>
-    </div>
-  </div>
-</header>
-
-<div class="marquee">
-  <div class="track">
-    <span>Siti vetrina <i class="fa-solid fa-star"></i> E-commerce <i class="fa-solid fa-star"></i> Landing page <i class="fa-solid fa-star"></i> Web app <i class="fa-solid fa-star"></i> SEO <i class="fa-solid fa-star"></i> UI/UX Design <i class="fa-solid fa-star"></i> Restyling <i class="fa-solid fa-star"></i></span>
-    <span>Siti vetrina <i class="fa-solid fa-star"></i> E-commerce <i class="fa-solid fa-star"></i> Landing page <i class="fa-solid fa-star"></i> Web app <i class="fa-solid fa-star"></i> SEO <i class="fa-solid fa-star"></i> UI/UX Design <i class="fa-solid fa-star"></i> Restyling <i class="fa-solid fa-star"></i></span>
-  </div>
-</div>
-
-<section class="block" id="servizi">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Servizi</div>
-      <h2>Tutto quello che serve per <span class="grad-text">farti trovare</span>.</h2>
-      <p>Dalla prima bozza alla messa online. Un unico referente, zero complicazioni.</p>
-    </div>
-    <div class="services">
-      <div class="card reveal"><div class="icon"><i class="fa-solid fa-store"></i></div><h3>Siti vetrina</h3><p>Il biglietto da visita digitale della tua attività. Elegante, chiaro, pensato per convertire visite in contatti.</p></div>
-      <div class="card reveal"><div class="icon"><i class="fa-solid fa-cart-shopping"></i></div><h3>E-commerce</h3><p>Negozi online semplici da gestire, con pagamenti sicuri e un checkout che non fa scappare i clienti.</p></div>
-      <div class="card reveal"><div class="icon"><i class="fa-solid fa-rocket"></i></div><h3>Landing page</h3><p>Pagine singole ad alto impatto per campagne, lanci e promozioni. Ottimizzate per le conversioni.</p></div>
-      <div class="card reveal"><div class="icon"><i class="fa-solid fa-code"></i></div><h3>Web app</h3><p>Gestionali, aree riservate, prenotazioni. Applicazioni su misura con React e database cloud.</p></div>
-      <div class="card reveal"><div class="icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3>SEO &amp; Performance</h3><p>Siti velocissimi e ottimizzati per Google. Perché un bel sito che nessuno trova non serve.</p></div>
-      <div class="card reveal"><div class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>Manutenzione</h3><p>Aggiornamenti, backup, sicurezza e modifiche. Il tuo sito resta sempre in forma.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="lavori" style="padding-top:0">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Portfolio</div>
-      <h2>Lavori <span class="grad-text">selezionati</span>.</h2>
-      <p>Alcuni progetti recenti. Ogni sito è diverso, perché ogni attività è diversa.</p>
-    </div>
-    <div class="works">
-      <a href="#" class="work reveal"><div class="work-visual w1"><img src="./Io_condo.png" style="max-width:100%;max-height:100%;object-fit:contain;" alt="Il mio Condominio"/></div><div class="work-info"><div><h3>Il mio Condominio</h3><span>Web app · Gestione condominiale</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
-      <a href="#" class="work reveal"><div class="work-visual w2"><img src="./studio_legale.png" style="max-width:100%;max-height:100%;object-fit:contain;" alt="Studio Legale Rossi"/></div><div class="work-info"><div><h3>Studio Legale Rossi</h3><span>Sito vetrina · Professionisti</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
-      <a href="#" class="work reveal"><div class="work-visual w3"><img src="./greenshop.png" style="max-width:100%;max-height:100%;object-fit:contain;" alt="GreenShop"/></div><div class="work-info"><div><h3>GreenShop</h3><span>E-commerce · Prodotti bio</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
-      <a href="https://kepos-taormina-sigma.vercel.app/menu" target="_blank" class="work reveal"><div class="work-visual w4"><img src="./kepos.png" style="max-width:100%;max-height:100%;object-fit:contain;" alt="Kepos Taormina"/></div><div class="work-info"><div><h3>Kepos Taormina</h3><span>Sito ristorante · Ristorazione</span></div><div class="arrow"><i class="fa-solid fa-arrow-right"></i></div></div></a>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="processo" style="padding-top:0">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Metodo</div>
-      <h2>Online in <span class="grad-text">4 passi</span>.</h2>
-      <p>Un processo chiaro, tempi certi, nessuna sorpresa.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal"><h3>Ascolto</h3><p>Una call gratuita per capire attività, obiettivi e pubblico.</p></div>
-      <div class="step reveal"><h3>Design</h3><p>Ti mostro il progetto grafico prima di scrivere una riga di codice.</p></div>
-      <div class="step reveal"><h3>Sviluppo</h3><p>Codice pulito, veloce, responsive su ogni dispositivo.</p></div>
-      <div class="step reveal"><h3>Lancio</h3><p>Messa online, dominio, analytics. E resto al tuo fianco dopo.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="prezzi" style="padding-top:0">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Prezzi</div>
-      <h2>Pacchetti <span class="grad-text">trasparenti</span>.</h2>
-      <p>Prezzi indicativi. Ogni preventivo è su misura e gratuito.</p>
-    </div>
-    <div class="pricing">
-      <div class="price reveal"><h3>Start</h3><div class="sub">Per iniziare con il piede giusto</div><div class="amount">€490<small> una tantum</small></div><div class="canone"><i class="fa-solid fa-rotate"></i>+ €10/mese di canone</div><ul><li><i class="fa-solid fa-check"></i>Landing page singola</li><li><i class="fa-solid fa-check"></i>Design responsive</li><li><i class="fa-solid fa-check"></i>Modulo contatti</li><li><i class="fa-solid fa-check"></i>SEO di base</li></ul><a href="#contatti" class="btn btn-ghost">Scegli Start</a></div>
-      <div class="price featured reveal"><span class="badge">Più richiesto</span><h3>Business</h3><div class="sub">Il sito vetrina completo</div><div class="amount">€990<small> una tantum</small></div><div class="canone"><i class="fa-solid fa-rotate"></i>+ €10/mese di canone</div><ul><li><i class="fa-solid fa-check"></i>Fino a 6 pagine</li><li><i class="fa-solid fa-check"></i>Design personalizzato</li><li><i class="fa-solid fa-check"></i>SEO avanzata + Google Maps</li><li><i class="fa-solid fa-check"></i>Blog / news</li><li><i class="fa-solid fa-check"></i>3 mesi di assistenza</li></ul><a href="#contatti" class="btn btn-primary">Scegli Business</a></div>
-      <div class="price reveal"><h3>Custom</h3><div class="sub">E-commerce e web app</div><div class="amount">Su misura</div><ul><li><i class="fa-solid fa-check"></i>Funzionalità personalizzate</li><li><i class="fa-solid fa-check"></i>Area riservata / login</li><li><i class="fa-solid fa-check"></i>Pagamenti online</li><li><i class="fa-solid fa-check"></i>Integrazioni e database</li></ul><a href="#contatti" class="btn btn-ghost">Parliamone</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="block" style="padding:50px 0 0">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Dicono di me</div>
-      <h2>Clienti <span class="grad-text">felici</span>.</h2>
-    </div>
-    <div class="quotes-container">
-      <button class="carousel-arrow prev" id="prevQuote"><i class="fa-solid fa-chevron-left"></i></button>
-      <div class="quotes" id="quotesCarousel">
-        <div class="quote"><div class="stars">★★★★★</div><p>"In tre settimane avevamo il sito online. Le richieste di preventivo sono raddoppiate."</p><div class="who"><div class="avatar">LR</div><div>Laura R.<small>Studio professionale</small></div></div></div>
-        <div class="quote"><div class="stars">★★★★★</div><p>"Disponibile, veloce e preciso. Ha capito subito cosa volevamo comunicare."</p><div class="who"><div class="avatar">GM</div><div>Giorgio M.<small>Ristoratore</small></div></div></div>
-        <div class="quote"><div class="stars">★★★★★</div><p>"Il nuovo e-commerce è semplicissimo da gestire. Finalmente vendiamo online sul serio."</p><div class="who"><div class="avatar">SC</div><div>Sara C.<small>Negozio bio</small></div></div></div>
-        <div class="quote"><div class="stars">★★★★★</div><p>"Mi ha aiutato a trasformare la mia idea in realtà. Professionale e sempre disponibile."</p><div class="who"><div class="avatar">FS</div><div>Francesca S.<small>Freelancer</small></div></div></div>
-        <div class="quote"><div class="stars">★★★★★</div><p>"Il sito è bellissimo e le conversioni sono aumentate del 40%. Consigliato!"</p><div class="who"><div class="avatar">MC</div><div>Marco C.<small>E-commerce</small></div></div></div>
-        <div class="quote"><div class="stars">★★★★★</div><p>"Ottimo rapporto qualità-prezzo. Ha rispettato i tempi e ha superato le aspettative."</p><div class="who"><div class="avatar">AP</div><div>Andrea P.<small>Agenzia di viaggi</small></div></div></div>
-        <div class="quote"><div class="stars">★★★★★</div><p>"Un vero professionista. Il sito è velocissimo, bellissimo e facile da gestire."</p><div class="who"><div class="avatar">EG</div><div>Elena G.<small>Consulente HR</small></div></div></div>
-        <div class="quote"><div class="stars">★★★★★</div><p>"Ha creato un sito che comunica davvero i valori della mia azienda. Fantastico!"</p><div class="who"><div class="avatar">RD</div><div>Roberto D.<small>Startup Tech</small></div></div></div>
-        <div class="quote"><div class="stars">★★★★★</div><p>"Dopo il restyling le visite sono triplicate. Investimento che non mi pento."</p><div class="who"><div class="avatar">VB</div><div>Valentina B.<small>Studio fitness</small></div></div></div>
+      /* RESPONSIVE */
+      @media (max-width: 960px) {
+        .services,
+        .pricing {
+          grid-template-columns: 1fr;
+        }
+        .steps {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .works {
+          grid-template-columns: 1fr;
+        }
+        .contact {
+          grid-template-columns: 1fr;
+          padding: 40px 28px;
+        }
+        .price.featured {
+          transform: none;
+        }
+        .nav-links {
+          position: fixed;
+          top: 76px;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          background: rgba(11, 11, 18, 0.97);
+          padding: 28px 6%;
+          gap: 20px;
+          display: none;
+          border-bottom: 1px solid var(--border);
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .menu-btn {
+          display: block;
+        }
+        .nav-cta {
+          display: none;
+        }
+      }
+      @media (max-width: 560px) {
+        .work-visual {
+          height: auto;
+          padding: 16px;
+        }
+        .work-visual.w1 picture,
+        .work-visual.w2 picture,
+        .work-visual.w3 picture {
+          display: none;
+        }
+        .work-visual.w1 {
+          background: #f8f3e9;
+        }
+        .work-visual.w2 {
+          background: #e7f4fc;
+        }
+        .work-visual.w3 {
+          background: #e8fbf1;
+        }
+        .mobile-preview {
+          display: flex;
+          width: 100%;
+          max-width: 330px;
+          height: 380px;
+          overflow: hidden;
+          border: 1px solid rgba(20, 34, 50, 0.12);
+          border-radius: 8px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+          font-family: Georgia, serif;
+        }
+        .condo-preview {
+          position: relative;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 24px;
+          background: #f8f3e9;
+          color: #262d3a;
+          text-align: center;
+        }
+        .preview-language {
+          position: absolute;
+          top: 18px;
+          right: 18px;
+          padding: 5px 9px;
+          border: 1px solid #e6dfd1;
+          border-radius: 20px;
+          background: #fffdf8;
+          color: #3c5268;
+          font: 10px var(--sans);
+        }
+        .condo-symbol {
+          margin-bottom: 8px;
+          color: #77748e;
+          font-size: 24px;
+        }
+        .condo-preview h4 {
+          font-size: 21px;
+        }
+        .condo-preview > p {
+          margin: 7px 0 17px;
+          color: #78808a;
+          font: 10px var(--sans);
+        }
+        .condo-form {
+          display: grid;
+          width: 100%;
+          gap: 10px;
+          padding: 14px;
+          border: 1px solid #e7dfd2;
+          border-radius: 9px;
+          background: #fff;
+          box-shadow: 0 5px 14px rgba(58, 44, 26, 0.1);
+          text-align: left;
+          font: 9px var(--sans);
+        }
+        .condo-field {
+          display: grid;
+          gap: 4px;
+          color: #2d4962;
+        }
+        .condo-field span {
+          padding: 8px;
+          border: 1px solid #e6ddce;
+          border-radius: 5px;
+          background: #fbf8f1;
+          color: #80858a;
+        }
+        .condo-submit {
+          padding: 8px;
+          border-radius: 20px;
+          background: #bd4b32;
+          color: white;
+          text-align: center;
+          font-weight: 700;
+        }
+        .legal-preview {
+          flex-direction: column;
+          background: #fff;
+          color: #092e53;
+          font-family: var(--sans);
+        }
+        .legal-nav,
+        .green-nav {
+          display: flex;
+          flex: 0 0 48px;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 17px;
+          background: #fff;
+          font-size: 12px;
+          font-weight: 700;
+        }
+        .legal-nav i {
+          color: #008ec7;
+          font-size: 17px;
+        }
+        .legal-hero {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 184px;
+          padding: 16px;
+          background: #e7f4fc;
+          text-align: center;
+        }
+        .legal-hero h4 {
+          font-size: 22px;
+          line-height: 1.15;
+        }
+        .legal-hero .lawyer-name {
+          margin-top: 7px;
+          font-size: 13px;
+        }
+        .legal-hero .law-areas {
+          margin: 7px 0 12px;
+          color: #586c7d;
+          font: 9px/1.45 var(--sans);
+        }
+        .preview-actions {
+          display: grid;
+          width: 100%;
+          gap: 7px;
+        }
+        .preview-action {
+          padding: 8px 10px;
+          border: 1px solid #008fc7;
+          border-radius: 4px;
+          background: #008fc7;
+          color: white;
+          font: 600 10px var(--sans);
+        }
+        .preview-action.secondary {
+          background: white;
+          color: #008fc7;
+        }
+        .legal-specialties {
+          display: grid;
+          gap: 7px;
+          padding: 11px 13px;
+          background: #fff;
+        }
+        .legal-specialties h5 {
+          margin: 0 0 1px;
+          font-size: 16px;
+          text-align: center;
+        }
+        .legal-specialty {
+          padding: 7px 9px;
+          border-left: 3px solid #008fc7;
+          border-radius: 5px;
+          background: #f6f8fa;
+          font: 9px/1.35 var(--sans);
+        }
+        .legal-specialty strong {
+          display: block;
+          margin-bottom: 2px;
+          font-size: 9px;
+        }
+        .green-preview {
+          flex-direction: column;
+          background: #e8fbf1;
+          color: #075d49;
+          font-family: var(--sans);
+        }
+        .green-nav {
+          color: #087b60;
+        }
+        .green-nav i {
+          color: #087b60;
+          font-size: 17px;
+        }
+        .green-hero {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 26px 19px;
+          text-align: center;
+        }
+        .green-hero h4 {
+          font-size: 25px;
+          line-height: 1.13;
+        }
+        .green-hero .green-subtitle {
+          margin-top: 9px;
+          color: #087b60;
+          font-size: 13px;
+        }
+        .green-hero .green-tagline {
+          margin: 6px 0 17px;
+          color: #149773;
+          font: 10px var(--sans);
+        }
+        .green-preview .preview-action {
+          border-color: #00ae82;
+          background: #00ae82;
+        }
+        .green-preview .preview-action.secondary {
+          background: transparent;
+          color: #008f6b;
+        }
+        .work-visual picture {
+          height: auto;
+        }
+        .work-visual img {
+          max-height: 380px;
+        }
+        .steps {
+          grid-template-columns: 1fr;
+        }
+        .stats {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        section.block {
+          padding: 80px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="nav">
+      <div class="container nav-inner">
+        <a href="#" class="logo"
+          ><img class="logo-image" src="LOGO.png" alt="M&amp;F Studio"
+        /></a>
+        <div class="nav-links" id="links">
+          <a href="#servizi">Servizi</a>
+          <a href="#lavori">Lavori</a>
+          <a href="#processo">Metodo</a>
+          <a href="#prezzi">Prezzi</a>
+          <a href="#contatti">Contatti</a>
+        </div>
+        <a href="#contatti" class="btn btn-primary nav-cta"
+          >Parliamone <i class="fa-solid fa-arrow-right"></i
+        ></a>
+        <button class="menu-btn" id="menuBtn" aria-label="Apri menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-      <button class="carousel-arrow next" id="nextQuote"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<section class="block" id="contatti" style="padding-top:50px;padding-bottom:80px">
-  <div class="container">
-    <div class="contact reveal">
-      <div class="blob b1"></div><div class="blob b2"></div>
-      <div>
-        <div class="eyebrow">Contatti</div>
-        <h2>Hai un progetto?<br><span class="grad-text">Parliamone.</span></h2>
-        <p>Raccontami la tua idea. Rispondo entro 24 ore con una proposta concreta e senza impegno.</p>
-        <div class="contact-list">
-          <a href="mailto:iltuositoweb.roma@gmail.com"><i class="fa-solid fa-envelope"></i>iltuositoweb.roma@gmail.com</a>
-          <a href="https://wa.me/393291042241" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>+39 329 104 2241</a>
-          <a href="#"><i class="fa-solid fa-location-dot"></i>Roma · Lavoro anche da remoto</a>
+    <header class="hero">
+      <div class="grid-bg"></div>
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+      <div class="container hero-content">
+        <div class="pill">
+          <span class="dot"></span> Disponibile per nuovi progetti
+        </div>
+        <h1>
+          Siti web che<br /><span class="grad-text rotator" id="rotator"
+            >vendono</span
+          >.
+        </h1>
+        <p>
+          Progetto e sviluppo siti veloci, moderni e su misura. Niente template
+          anonimi: un sito che racconta la tua attività e porta clienti veri.
+        </p>
+        <div class="hero-cta">
+          <a href="#contatti" class="btn btn-primary"
+            >Richiedi un preventivo gratuito
+            <i class="fa-solid fa-arrow-right"></i
+          ></a>
+          <a href="#lavori" class="btn btn-ghost"
+            ><i class="fa-regular fa-circle-play"></i> Guarda i lavori</a
+          >
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong><span class="count" data-to="250">0</span>+</strong
+            ><span>Progetti consegnati</span>
+          </div>
+          <div class="stat">
+            <strong><span class="count" data-to="98">0</span>%</strong
+            ><span>Clienti soddisfatti</span>
+          </div>
+          <div class="stat">
+            <strong><span class="count" data-to="2">0</span> Sett.</strong
+            ><span>Tempo realizzazione</span>
+          </div>
         </div>
       </div>
-      <form id="form" action="https://formspree.io/f/xwlvllvp" method="POST" accept-charset="UTF-8">
-        <input type="hidden" name="_subject" value="Nuova richiesta dal sito M&amp;F Studio">
-        <input name="nome" placeholder="Nome e cognome" required="">
-        <input name="email" type="email" placeholder="Email" required="">
-        <select name="tipo">
-          <option>Sito vetrina</option><option>E-commerce</option><option>Landing page</option><option>Web app</option><option>Altro</option>
-        </select>
-        <textarea name="messaggio" placeholder="Raccontami il tuo progetto…" required=""></textarea>
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0" aria-hidden="true">
-        <button class="btn btn-primary" type="submit" style="justify-content:center">Invia richiesta <i class="fa-solid fa-paper-plane"></i></button>
-      </form>
+    </header>
+
+    <div class="marquee">
+      <div class="track">
+        <span
+          >Siti vetrina <i class="fa-solid fa-star"></i> E-commerce
+          <i class="fa-solid fa-star"></i> Landing page
+          <i class="fa-solid fa-star"></i> Web app
+          <i class="fa-solid fa-star"></i> SEO
+          <i class="fa-solid fa-star"></i> UI/UX Design
+          <i class="fa-solid fa-star"></i> Restyling
+          <i class="fa-solid fa-star"></i
+        ></span>
+        <span
+          >Siti vetrina <i class="fa-solid fa-star"></i> E-commerce
+          <i class="fa-solid fa-star"></i> Landing page
+          <i class="fa-solid fa-star"></i> Web app
+          <i class="fa-solid fa-star"></i> SEO
+          <i class="fa-solid fa-star"></i> UI/UX Design
+          <i class="fa-solid fa-star"></i> Restyling
+          <i class="fa-solid fa-star"></i
+        ></span>
+      </div>
     </div>
-  </div>
-</section>
 
-<footer>
-  <div class="container foot">
-    <a href="#" class="logo"><span class="logo-mark">M&F</span>Studio</a>
-    <span>© <span id="y"></span> Il Tuo Sito Web · Roma</span>
-    <div class="socials">
-      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-    </div>
-  </div>
-</footer>
+    <section class="block" id="servizi">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Servizi</div>
+          <h2>
+            Tutto quello che serve per
+            <span class="grad-text">farti trovare</span>.
+          </h2>
+          <p>
+            Dalla prima bozza alla messa online. Un unico referente, zero
+            complicazioni.
+          </p>
+        </div>
+        <div class="services">
+          <div class="card reveal">
+            <div class="icon"><i class="fa-solid fa-store"></i></div>
+            <h3>Siti vetrina</h3>
+            <p>
+              Il biglietto da visita digitale della tua attività. Elegante,
+              chiaro, pensato per convertire visite in contatti.
+            </p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            <h3>E-commerce</h3>
+            <p>
+              Negozi online semplici da gestire, con pagamenti sicuri e un
+              checkout che non fa scappare i clienti.
+            </p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3>Landing page</h3>
+            <p>
+              Pagine singole ad alto impatto per campagne, lanci e promozioni.
+              Ottimizzate per le conversioni.
+            </p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Web app</h3>
+            <p>
+              Gestionali, aree riservate, prenotazioni. Applicazioni su misura
+              con React e database cloud.
+            </p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+            <h3>SEO &amp; Performance</h3>
+            <p>
+              Siti velocissimi e ottimizzati per Google. Perché un bel sito che
+              nessuno trova non serve.
+            </p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h3>Manutenzione</h3>
+            <p>
+              Aggiornamenti, backup, sicurezza e modifiche. Il tuo sito resta
+              sempre in forma.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-  const EMAIL = 'iltuositoweb.roma@gmail.com';
+    <section class="block" id="lavori" style="padding-top: 0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Portfolio</div>
+          <h2>Lavori <span class="grad-text">selezionati</span>.</h2>
+          <p>
+            Alcuni progetti recenti. Ogni sito è diverso, perché ogni attività è
+            diversa.
+          </p>
+        </div>
+        <div class="works">
+          <a href="#" class="work reveal"
+            ><div class="work-visual w1">
+              <picture>
+                <img src="images/Io_condo.png" alt="Il mio Condominio" />
+              </picture>
+              <div class="mobile-preview condo-preview" aria-hidden="true">
+                <span class="preview-language"
+                  ><i class="fa-solid fa-globe"></i> Italiano</span
+                >
+                <i class="fa-solid fa-building-columns condo-symbol"></i>
+                <h4>Il mio Condominio</h4>
+                <p>Accedi per vedere bollettini, avvisi e documenti</p>
+                <div class="condo-form">
+                  <div class="condo-field">
+                    Indirizzo email<span>nome@esempio.it</span>
+                  </div>
+                  <div class="condo-field">Password<span>••••••••</span></div>
+                  <div class="condo-submit">Entra</div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Il mio Condominio</h3>
+                <span>Web app · Gestione condominiale</span>
+              </div>
+              <div class="arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div></div
+          ></a>
+          <a href="#" class="work reveal"
+            ><div class="work-visual w2">
+              <picture>
+                <img src="images/studio_legale.png" alt="Studio Legale Rossi" />
+              </picture>
+              <div class="mobile-preview legal-preview" aria-hidden="true">
+                <div class="legal-nav">
+                  <span>Studio Legale Rossi</span
+                  ><i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="legal-hero">
+                  <h4>Studio Legale Rossi</h4>
+                  <span class="lawyer-name">Avv. Marco Rossi</span>
+                  <p class="law-areas">
+                    Diritto Civile · Commerciale · Contrattuale · Successioni
+                  </p>
+                  <div class="preview-actions">
+                    <div class="preview-action">Prenota Consulenza</div>
+                    <div class="preview-action secondary">Scopri di più</div>
+                  </div>
+                </div>
+                <div class="legal-specialties">
+                  <h5>Aree di Specializzazione</h5>
+                  <div class="legal-specialty">
+                    <strong>Diritto Civile</strong>Contratti, responsabilità
+                    civile e tutela dei diritti.
+                  </div>
+                  <div class="legal-specialty">
+                    <strong>Diritto Commerciale</strong>Società, contratti e
+                    transazioni commerciali.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Studio Legale Rossi</h3>
+                <span>Sito vetrina · Professionisti</span>
+              </div>
+              <div class="arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div></div
+          ></a>
+          <a href="#" class="work reveal"
+            ><div class="work-visual w3">
+              <picture>
+                <img src="images/greenshop.png" alt="GreenShop" />
+              </picture>
+              <div class="mobile-preview green-preview" aria-hidden="true">
+                <div class="green-nav">
+                  <span>GreenShop</span><i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="green-hero">
+                  <h4>Prodotti Bio 100% Naturali</h4>
+                  <p class="green-subtitle">Sostenibili e a Filiera Corta</p>
+                  <p class="green-tagline">
+                    Dal produttore direttamente a casa tua
+                  </p>
+                  <div class="preview-actions">
+                    <div class="preview-action">Scopri i Prodotti</div>
+                    <div class="preview-action secondary">Leggi di Più</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>GreenShop</h3>
+                <span>E-commerce · Prodotti bio</span>
+              </div>
+              <div class="arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div></div
+          ></a>
+          <a
+            href="https://kepos-taormina-sigma.vercel.app/menu"
+            target="_blank"
+            class="work reveal"
+            ><div class="work-visual w4">
+              <picture>
+                <source
+                  media="(max-width: 560px)"
+                  srcset="images/mobile/kepos.png"
+                />
+                <img src="images/kepos.png" alt="Kepos Taormina" />
+              </picture>
+            </div>
+            <div class="work-info">
+              <div>
+                <h3>Kepos Taormina</h3>
+                <span>Sito ristorante · Ristorazione</span>
+              </div>
+              <div class="arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div></div
+          ></a>
+        </div>
+      </div>
+    </section>
 
-  document.getElementById('y').textContent = new Date().getFullYear();
+    <section class="block" id="processo" style="padding-top: 0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Metodo</div>
+          <h2>Online in <span class="grad-text">4 passi</span>.</h2>
+          <p>Un processo chiaro, tempi certi, nessuna sorpresa.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <h3>Ascolto</h3>
+            <p>Una call gratuita per capire attività, obiettivi e pubblico.</p>
+          </div>
+          <div class="step reveal">
+            <h3>Design</h3>
+            <p>
+              Ti mostro il progetto grafico prima di scrivere una riga di
+              codice.
+            </p>
+          </div>
+          <div class="step reveal">
+            <h3>Sviluppo</h3>
+            <p>Codice pulito, veloce, responsive su ogni dispositivo.</p>
+          </div>
+          <div class="step reveal">
+            <h3>Lancio</h3>
+            <p>Messa online, dominio, analytics. E resto al tuo fianco dopo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  // Nav on scroll
-  const nav = document.getElementById('nav');
-  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20));
+    <section class="block" id="prezzi" style="padding-top: 0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Prezzi</div>
+          <h2>Pacchetti <span class="grad-text">trasparenti</span>.</h2>
+          <p>Prezzi indicativi. Ogni preventivo è su misura e gratuito.</p>
+        </div>
+        <div class="pricing">
+          <div class="price reveal">
+            <h3>Start</h3>
+            <div class="sub">Per iniziare con il piede giusto</div>
+            <div class="amount">€490<small> una tantum</small></div>
+            <div class="canone">
+              <i class="fa-solid fa-rotate"></i>+ €10/mese di canone
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Landing page singola</li>
+              <li><i class="fa-solid fa-check"></i>Design responsive</li>
+              <li><i class="fa-solid fa-check"></i>Modulo contatti</li>
+              <li><i class="fa-solid fa-check"></i>SEO di base</li>
+            </ul>
+            <a href="#contatti" class="btn btn-ghost">Scegli Start</a>
+          </div>
+          <div class="price featured reveal">
+            <span class="badge">Più richiesto</span>
+            <h3>Business</h3>
+            <div class="sub">Il sito vetrina completo</div>
+            <div class="amount">€990<small> una tantum</small></div>
+            <div class="canone">
+              <i class="fa-solid fa-rotate"></i>+ €10/mese di canone
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Fino a 6 pagine</li>
+              <li><i class="fa-solid fa-check"></i>Design personalizzato</li>
+              <li>
+                <i class="fa-solid fa-check"></i>SEO avanzata + Google Maps
+              </li>
+              <li><i class="fa-solid fa-check"></i>Blog / news</li>
+              <li><i class="fa-solid fa-check"></i>3 mesi di assistenza</li>
+            </ul>
+            <a href="#contatti" class="btn btn-primary">Scegli Business</a>
+          </div>
+          <div class="price reveal">
+            <h3>Custom</h3>
+            <div class="sub">E-commerce e web app</div>
+            <div class="amount">Su misura</div>
+            <ul>
+              <li>
+                <i class="fa-solid fa-check"></i>Funzionalità personalizzate
+              </li>
+              <li><i class="fa-solid fa-check"></i>Area riservata / login</li>
+              <li><i class="fa-solid fa-check"></i>Pagamenti online</li>
+              <li><i class="fa-solid fa-check"></i>Integrazioni e database</li>
+            </ul>
+            <a href="#contatti" class="btn btn-ghost">Parliamone</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  // Mobile menu
-  const links = document.getElementById('links');
-  document.getElementById('menuBtn').onclick = () => links.classList.toggle('open');
-  links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remove('open'));
+    <section class="block" style="padding: 50px 0 0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Dicono di me</div>
+          <h2>Clienti <span class="grad-text">felici</span>.</h2>
+        </div>
+        <div class="quotes-container">
+          <button class="carousel-arrow prev" id="prevQuote">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="quotes" id="quotesCarousel">
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                "In tre settimane avevamo il sito online. Le richieste di
+                preventivo sono raddoppiate."
+              </p>
+              <div class="who">
+                <div class="avatar">LR</div>
+                <div>Laura R.<small>Studio professionale</small></div>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Disponibile, veloce e preciso. Ha capito subito cosa volevamo
+                comunicare."
+              </p>
+              <div class="who">
+                <div class="avatar">GM</div>
+                <div>Giorgio M.<small>Ristoratore</small></div>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Il nuovo e-commerce è semplicissimo da gestire. Finalmente
+                vendiamo online sul serio."
+              </p>
+              <div class="who">
+                <div class="avatar">SC</div>
+                <div>Sara C.<small>Negozio bio</small></div>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Mi ha aiutato a trasformare la mia idea in realtà.
+                Professionale e sempre disponibile."
+              </p>
+              <div class="who">
+                <div class="avatar">FS</div>
+                <div>Francesca S.<small>Freelancer</small></div>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Il sito è bellissimo e le conversioni sono aumentate del 40%.
+                Consigliato!"
+              </p>
+              <div class="who">
+                <div class="avatar">MC</div>
+                <div>Marco C.<small>E-commerce</small></div>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Ottimo rapporto qualità-prezzo. Ha rispettato i tempi e ha
+                superato le aspettative."
+              </p>
+              <div class="who">
+                <div class="avatar">AP</div>
+                <div>Andrea P.<small>Agenzia di viaggi</small></div>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Un vero professionista. Il sito è velocissimo, bellissimo e
+                facile da gestire."
+              </p>
+              <div class="who">
+                <div class="avatar">EG</div>
+                <div>Elena G.<small>Consulente HR</small></div>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Ha creato un sito che comunica davvero i valori della mia
+                azienda. Fantastico!"
+              </p>
+              <div class="who">
+                <div class="avatar">RD</div>
+                <div>Roberto D.<small>Startup Tech</small></div>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Dopo il restyling le visite sono triplicate. Investimento che
+                non mi pento."
+              </p>
+              <div class="who">
+                <div class="avatar">VB</div>
+                <div>Valentina B.<small>Studio fitness</small></div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-arrow next" id="nextQuote">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
 
-  // Rotating word
-  const words = ['vendono', 'convertono', 'emozionano', 'funzionano'];
-  let wi = 0;
-  const rot = document.getElementById('rotator');
-  setInterval(() => {
-    rot.style.transition = 'opacity .3s';
-    rot.style.opacity = 0;
-    setTimeout(() => {
-      wi = (wi + 1) % words.length;
-      rot.textContent = words[wi];
-      rot.style.opacity = 1;
-    }, 300);
-  }, 2600);
+    <section
+      class="block"
+      id="contatti"
+      style="padding-top: 50px; padding-bottom: 80px"
+    >
+      <div class="container">
+        <div class="contact reveal">
+          <div class="blob b1"></div>
+          <div class="blob b2"></div>
+          <div>
+            <div class="eyebrow">Contatti</div>
+            <h2>
+              Hai un progetto?<br /><span class="grad-text">Parliamone.</span>
+            </h2>
+            <p>
+              Raccontami la tua idea. Rispondo entro 24 ore con una proposta
+              concreta e senza impegno.
+            </p>
+            <div class="contact-list">
+              <a href="mailto:iltuositoweb.roma@gmail.com"
+                ><i class="fa-solid fa-envelope"></i
+                >iltuositoweb.roma@gmail.com</a
+              >
+              <a
+                href="https://wa.me/393291042241"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-whatsapp"></i>+39 329 104 2241</a
+              >
+              <a href="#"
+                ><i class="fa-solid fa-location-dot"></i>Roma · Lavoro anche da
+                remoto</a
+              >
+            </div>
+          </div>
+          <form
+            id="form"
+            action="https://formspree.io/f/xwlvllvp"
+            method="POST"
+            accept-charset="UTF-8"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nuova richiesta dal sito M&amp;F Studio"
+            />
+            <input name="nome" placeholder="Nome e cognome" required="" />
+            <input name="email" type="email" placeholder="Email" required="" />
+            <select name="tipo">
+              <option>Sito vetrina</option>
+              <option>E-commerce</option>
+              <option>Landing page</option>
+              <option>Web app</option>
+              <option>Altro</option>
+            </select>
+            <textarea
+              name="messaggio"
+              placeholder="Raccontami il tuo progetto…"
+              required=""
+            ></textarea>
+            <input
+              type="text"
+              name="_gotcha"
+              tabindex="-1"
+              autocomplete="off"
+              style="position: absolute; left: -9999px; opacity: 0; height: 0"
+              aria-hidden="true"
+            />
+            <button
+              class="btn btn-primary"
+              type="submit"
+              style="justify-content: center"
+            >
+              Invia richiesta <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
 
-  // Reveal on scroll
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in');
-      io.unobserve(e.target);
-    }
-  }), { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach((el, i) => {
-    el.style.transitionDelay = (i % 3) * 80 + 'ms';
-    io.observe(el);
-  });
+    <footer>
+      <div class="container foot">
+        <a href="#" class="logo"
+          ><img class="logo-image" src="LOGO.png" alt="M&amp;F Studio"
+        /></a>
+        <span>© <span id="y"></span> Il Tuo Sito Web · Roma</span>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="LinkedIn"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a href="#" aria-label="GitHub"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
 
-  // Counters - partono quando visibili
-  const countElements = document.querySelectorAll('.count');
-  const io2 = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.dataset.counted) {
-        entry.target.dataset.counted = 'true';
-        const el = entry.target;
-        const to = +el.dataset.to;
-        const t0 = performance.now();
-        const tick = t => {
-          const p = Math.min((t - t0) / 1600, 1);
-          el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
-          if (p < 1) requestAnimationFrame(tick);
+    <script>
+      const EMAIL = "iltuositoweb.roma@gmail.com";
+
+      document.getElementById("y").textContent = new Date().getFullYear();
+
+      // Nav on scroll
+      const nav = document.getElementById("nav");
+      addEventListener("scroll", () =>
+        nav.classList.toggle("scrolled", scrollY > 20),
+      );
+
+      // Mobile menu
+      const links = document.getElementById("links");
+      document.getElementById("menuBtn").onclick = () =>
+        links.classList.toggle("open");
+      links
+        .querySelectorAll("a")
+        .forEach((a) => (a.onclick = () => links.classList.remove("open")));
+
+      // Rotating word
+      const words = ["vendono", "convertono", "emozionano", "funzionano"];
+      let wi = 0;
+      const rot = document.getElementById("rotator");
+      setInterval(() => {
+        rot.style.transition = "opacity .3s";
+        rot.style.opacity = 0;
+        setTimeout(() => {
+          wi = (wi + 1) % words.length;
+          rot.textContent = words[wi];
+          rot.style.opacity = 1;
+        }, 300);
+      }, 2600);
+
+      // Reveal on scroll
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach((el, i) => {
+        el.style.transitionDelay = (i % 3) * 80 + "ms";
+        io.observe(el);
+      });
+
+      // Counters - partono quando visibili
+      const countElements = document.querySelectorAll(".count");
+      const io2 = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !entry.target.dataset.counted) {
+              entry.target.dataset.counted = "true";
+              const el = entry.target;
+              const to = +el.dataset.to;
+              const t0 = performance.now();
+              const tick = (t) => {
+                const p = Math.min((t - t0) / 1600, 1);
+                el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+                if (p < 1) requestAnimationFrame(tick);
+              };
+              requestAnimationFrame(tick);
+              io2.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      countElements.forEach((el) => io2.observe(el));
+
+      // Spotlight on cards
+      document.querySelectorAll(".card").forEach((c) =>
+        c.addEventListener("mousemove", (e) => {
+          const r = c.getBoundingClientRect();
+          c.style.setProperty("--mx", e.clientX - r.left + "px");
+          c.style.setProperty("--my", e.clientY - r.top + "px");
+        }),
+      );
+
+      // Quotes carousel circolare: 3 slide su desktop, 1 su mobile, autoplay + frecce + swipe
+      (function () {
+        const viewport = document.getElementById("quotesCarousel");
+        const originals = Array.from(viewport.querySelectorAll(".quote"));
+        const prevBtn = document.getElementById("prevQuote");
+        const nextBtn = document.getElementById("nextQuote");
+        const n = originals.length;
+        const mq = window.matchMedia("(min-width:900px)");
+        const track = document.createElement("div");
+        track.className = "qtrack";
+        viewport.innerHTML = "";
+        viewport.appendChild(track);
+
+        let perView = 3,
+          index = 0,
+          busy = false,
+          timer = null;
+
+        const slide = (el) => {
+          const d = document.createElement("div");
+          d.className = "qslide";
+          d.appendChild(el.cloneNode(true));
+          return d;
         };
-        requestAnimationFrame(tick);
-        io2.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
 
-  countElements.forEach(el => io2.observe(el));
+        function place(animate) {
+          track.classList.toggle("no-anim", !animate);
+          track.style.transform = `translateX(${-(index + perView) * (100 / perView)}%)`;
+          if (!animate) void track.offsetWidth; // forza il reflow prima della prossima animazione
+        }
 
-  // Spotlight on cards
-  document.querySelectorAll('.card').forEach(c => c.addEventListener('mousemove', e => {
-    const r = c.getBoundingClientRect();
-    c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-    c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  }));
+        function build() {
+          perView = mq.matches ? 3 : 1;
+          track.classList.toggle("one", perView === 1);
+          track.innerHTML = "";
+          for (let i = n - perView; i < n; i++)
+            track.appendChild(slide(originals[i])); // cloni in testa
+          originals.forEach((el) => track.appendChild(slide(el))); // slide reali
+          for (let i = 0; i < perView; i++)
+            track.appendChild(slide(originals[i])); // cloni in coda
+          index = 0;
+          busy = false;
+          place(false);
+        }
 
-  // Quotes carousel circolare: 3 slide su desktop, 1 su mobile, autoplay + frecce + swipe
-  (function () {
-    const viewport = document.getElementById('quotesCarousel');
-    const originals = Array.from(viewport.querySelectorAll('.quote'));
-    const prevBtn = document.getElementById('prevQuote');
-    const nextBtn = document.getElementById('nextQuote');
-    const n = originals.length;
-    const mq = window.matchMedia('(min-width:900px)');
-    const track = document.createElement('div');
-    track.className = 'qtrack';
-    viewport.innerHTML = '';
-    viewport.appendChild(track);
+        function move(dir) {
+          if (busy) return;
+          busy = true;
+          index += dir;
+          place(true);
+          setTimeout(() => {
+            // salto invisibile quando si esce dalla serie reale: il giro è infinito
+            if (index >= n) index -= n;
+            if (index < 0) index += n;
+            place(false);
+            busy = false;
+          }, 620);
+        }
 
-    let perView = 3, index = 0, busy = false, timer = null;
+        function restart() {
+          clearInterval(timer);
+          timer = setInterval(() => move(1), 5000);
+        }
 
-    const slide = el => {
-      const d = document.createElement('div');
-      d.className = 'qslide';
-      d.appendChild(el.cloneNode(true));
-      return d;
-    };
+        nextBtn.addEventListener("click", () => {
+          move(1);
+          restart();
+        });
+        prevBtn.addEventListener("click", () => {
+          move(-1);
+          restart();
+        });
 
-    function place(animate) {
-      track.classList.toggle('no-anim', !animate);
-      track.style.transform = `translateX(${-(index + perView) * (100 / perView)}%)`;
-      if (!animate) void track.offsetWidth; // forza il reflow prima della prossima animazione
-    }
+        // swipe su touch
+        let x0 = null;
+        viewport.addEventListener(
+          "touchstart",
+          (e) => {
+            x0 = e.touches[0].clientX;
+          },
+          { passive: true },
+        );
+        viewport.addEventListener(
+          "touchend",
+          (e) => {
+            if (x0 === null) return;
+            const dx = e.changedTouches[0].clientX - x0;
+            x0 = null;
+            if (Math.abs(dx) > 40) {
+              move(dx < 0 ? 1 : -1);
+              restart();
+            }
+          },
+          { passive: true },
+        );
 
-    function build() {
-      perView = mq.matches ? 3 : 1;
-      track.classList.toggle('one', perView === 1);
-      track.innerHTML = '';
-      for (let i = n - perView; i < n; i++) track.appendChild(slide(originals[i]));   // cloni in testa
-      originals.forEach(el => track.appendChild(slide(el)));                          // slide reali
-      for (let i = 0; i < perView; i++) track.appendChild(slide(originals[i]));       // cloni in coda
-      index = 0;
-      busy = false;
-      place(false);
-    }
+        // pausa con il mouse sopra (solo desktop)
+        const box = viewport.parentElement;
+        box.addEventListener("mouseenter", () => clearInterval(timer));
+        box.addEventListener("mouseleave", restart);
 
-    function move(dir) {
-      if (busy) return;
-      busy = true;
-      index += dir;
-      place(true);
-      setTimeout(() => {
-        // salto invisibile quando si esce dalla serie reale: il giro è infinito
-        if (index >= n) index -= n;
-        if (index < 0) index += n;
-        place(false);
-        busy = false;
-      }, 620);
-    }
+        mq.addEventListener("change", build);
+        build();
+        restart();
+      })();
 
-    function restart() {
-      clearInterval(timer);
-      timer = setInterval(() => move(1), 5000);
-    }
-
-    nextBtn.addEventListener('click', () => { move(1); restart(); });
-    prevBtn.addEventListener('click', () => { move(-1); restart(); });
-
-    // swipe su touch
-    let x0 = null;
-    viewport.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
-    viewport.addEventListener('touchend', e => {
-      if (x0 === null) return;
-      const dx = e.changedTouches[0].clientX - x0;
-      x0 = null;
-      if (Math.abs(dx) > 40) { move(dx < 0 ? 1 : -1); restart(); }
-    }, { passive: true });
-
-    // pausa con il mouse sopra (solo desktop)
-    const box = viewport.parentElement;
-    box.addEventListener('mouseenter', () => clearInterval(timer));
-    box.addEventListener('mouseleave', restart);
-
-    mq.addEventListener('change', build);
-    build();
-    restart();
-  })();
-
-  // Il form invia direttamente a Formspree (action HTML), nessun JS necessario
-</script>
-
-</body>
+      // Il form invia direttamente a Formspree (action HTML), nessun JS necessario
+    </script>
+  </body>
 </html>
