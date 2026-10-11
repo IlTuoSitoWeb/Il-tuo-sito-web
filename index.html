@@ -26,6 +26,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGFYW6DKD5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CGFYW6DKD5');
+    </script>
+    <!-- Fine Google Analytics 4 -->
+
     <style>
       :root {
         --bg: #0b0b12;
@@ -1333,7 +1344,7 @@
           <a href="#prezzi">Prezzi</a>
           <a href="#contatti">Contatti</a>
         </div>
-        <a href="#contatti" class="btn btn-primary nav-cta"
+        <a href="#contatti" class="btn btn-primary nav-cta" onclick="gtag('event', 'click', {'event_category': 'pulsanti_nav', 'event_label': 'parliamone_nav'});"
           >Parliamone <i class="fa-solid fa-arrow-right"></i
         ></a>
         <button class="menu-btn" id="menuBtn" aria-label="Apri menu">
@@ -1361,11 +1372,11 @@
           anonimi: un sito che racconta la tua attività e porta clienti veri.
         </p>
         <div class="hero-cta">
-          <a href="#contatti" class="btn btn-primary"
+          <a href="#contatti" class="btn btn-primary" onclick="gtag('event', 'click', {'event_category': 'pulsanti_hero', 'event_label': 'preventivo_gratuito'});"
             >Richiedi un preventivo gratuito
             <i class="fa-solid fa-arrow-right"></i
           ></a>
-          <a href="#lavori" class="btn btn-ghost"
+          <a href="#lavori" class="btn btn-ghost" onclick="gtag('event', 'click', {'event_category': 'pulsanti_hero', 'event_label': 'guarda_lavori'});"
             ><i class="fa-regular fa-circle-play"></i> Guarda i lavori</a
           >
         </div>
@@ -1490,7 +1501,7 @@
           </p>
         </div>
         <div class="works">
-          <a href="#" class="work reveal"
+          <a href="#" class="work reveal" onclick="gtag('event', 'click', {'event_category': 'portfolio', 'event_label': 'condo_project'});"
             ><div class="work-visual w1">
               <picture>
                 <img src="images/Io_condo.png" alt="Il mio Condominio" />
@@ -1520,7 +1531,7 @@
                 <i class="fa-solid fa-arrow-right"></i>
               </div></div
           ></a>
-          <a href="#" class="work reveal"
+          <a href="#" class="work reveal" onclick="gtag('event', 'click', {'event_category': 'portfolio', 'event_label': 'studio_legale_project'});"
             ><div class="work-visual w2">
               <picture>
                 <img src="images/studio_legale.png" alt="Studio Legale Rossi" />
@@ -1563,7 +1574,7 @@
                 <i class="fa-solid fa-arrow-right"></i>
               </div></div
           ></a>
-          <a href="#" class="work reveal"
+          <a href="#" class="work reveal" onclick="gtag('event', 'click', {'event_category': 'portfolio', 'event_label': 'greenshop_project'});"
             ><div class="work-visual w3">
               <picture>
                 <img src="images/greenshop.png" alt="GreenShop" />
@@ -1598,6 +1609,7 @@
             href="https://kepos-taormina-sigma.vercel.app/menu"
             target="_blank"
             class="work reveal"
+            onclick="gtag('event', 'click', {'event_category': 'portfolio', 'event_label': 'kepos_project'});"
             ><div class="work-visual w4">
               <picture>
                 <source
@@ -1700,7 +1712,7 @@
               <li><i class="fa-solid fa-check"></i>Modulo contatti</li>
               <li><i class="fa-solid fa-check"></i>SEO di base</li>
             </ul>
-            <a href="#contatti" class="btn btn-ghost">Scegli Start</a>
+            <a href="#contatti" class="btn btn-ghost" onclick="gtag('event', 'click', {'event_category': 'piani_prezzi', 'event_label': 'scegli_start'});">Scegli Start</a>
           </div>
           <div class="price featured reveal">
             <span class="badge">Più richiesto</span>
@@ -1744,7 +1756,7 @@
               <li><i class="fa-solid fa-check"></i>Blog / news</li>
               <li><i class="fa-solid fa-check"></i>3 mesi di assistenza</li>
             </ul>
-            <a href="#contatti" class="btn btn-primary">Scegli Business</a>
+            <a href="#contatti" class="btn btn-primary" onclick="gtag('event', 'click', {'event_category': 'piani_prezzi', 'event_label': 'scegli_business'});">Scegli Business</a>
           </div>
           <div class="price reveal">
             <h3>Custom</h3>
@@ -1782,7 +1794,7 @@
               <li><i class="fa-solid fa-check"></i>Pagamenti online</li>
               <li><i class="fa-solid fa-check"></i>Integrazioni e database</li>
             </ul>
-            <a href="#contatti" class="btn btn-ghost">Parliamone</a>
+            <a href="#contatti" class="btn btn-ghost" onclick="gtag('event', 'click', {'event_category': 'piani_prezzi', 'event_label': 'parliamone_custom'});">Parliamone</a>
           </div>
         </div>
       </div>
@@ -1948,7 +1960,7 @@
             />
             <input name="nome" placeholder="Nome e cognome" required="" />
             <input name="email" type="email" placeholder="Email" required="" />
-            <select name="tipo">
+            <select name="tipo" onchange="gtag('event', 'engagement', {'event_category': 'form', 'event_label': 'tipo_progetto_selezionato', 'value': this.value});">
               <option>Sito vetrina</option>
               <option>E-commerce</option>
               <option>Landing page</option>
@@ -1975,6 +1987,7 @@
             <button
               class="btn btn-primary"
               type="submit"
+              onclick="gtag('event', 'form_submit', {'event_category': 'form', 'event_label': 'richiesta_inviata'});"
               style="justify-content: center"
             >
               Invia richiesta <i class="fa-solid fa-paper-plane"></i>
@@ -1992,13 +2005,13 @@
         <span>© <span id="y"></span> MF Studio · Roma</span>
         <a class="legal-link" href="privacy.html">Privacy e note legali</a>
         <div class="socials">
-          <a href="#" aria-label="Instagram"
+          <a href="#" aria-label="Instagram" onclick="gtag('event', 'click', {'event_category': 'social', 'event_label': 'instagram'});"
             ><i class="fa-brands fa-instagram"></i
           ></a>
-          <a href="#" aria-label="LinkedIn"
+          <a href="#" aria-label="LinkedIn" onclick="gtag('event', 'click', {'event_category': 'social', 'event_label': 'linkedin'});"
             ><i class="fa-brands fa-linkedin-in"></i
           ></a>
-          <a href="#" aria-label="GitHub"
+          <a href="#" aria-label="GitHub" onclick="gtag('event', 'click', {'event_category': 'social', 'event_label': 'github'});"
             ><i class="fa-brands fa-github"></i
           ></a>
         </div>
