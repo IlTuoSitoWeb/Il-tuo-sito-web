@@ -1667,8 +1667,8 @@
             <div class="sub">Per iniziare con il piede giusto</div>
             <div class="pricing-with-discount">
               <div class="original-price">€800</div>
-              <div class="amount">€600<small> una tantum</small></div>
-              <div class="discount-badge">-25%</div>
+              <div class="amount">€640<small> una tantum</small></div>
+              <div class="discount-badge">-20%</div>
             </div>
             <div class="timer-container">
               <div class="timer-label">Sconto valido per</div>
@@ -1692,8 +1692,7 @@
               </div>
             </div>
             <div class="canone">
-              <i class="fa-solid fa-rotate"></i>+ €10/mese per supporto completo
-              sui problemi del sito
+              <i class="fa-solid fa-rotate"></i>+ €10/mese per hosting e supporto
             </div>
             <ul>
               <li><i class="fa-solid fa-check"></i>Landing page singola</li>
@@ -1708,9 +1707,9 @@
             <h3>Business</h3>
             <div class="sub">Il sito vetrina completo</div>
             <div class="pricing-with-discount">
-              <div class="original-price">€1.500</div>
+              <div class="original-price">€1.600</div>
               <div class="amount">€1.200<small> una tantum</small></div>
-              <div class="discount-badge">-20%</div>
+              <div class="discount-badge">-25%</div>
             </div>
             <div class="timer-container">
               <div class="timer-label">Sconto valido per</div>
@@ -1734,8 +1733,7 @@
               </div>
             </div>
             <div class="canone">
-              <i class="fa-solid fa-rotate"></i>+ €10/mese per supporto completo
-              sui problemi del sito
+              <i class="fa-solid fa-rotate"></i>+ €10/mese per hosting e supporto
             </div>
             <ul>
               <li><i class="fa-solid fa-check"></i>Fino a 6 pagine</li>
@@ -1752,6 +1750,27 @@
             <h3>Custom</h3>
             <div class="sub">E-commerce e web app</div>
             <div class="amount">Su misura</div>
+            <div class="timer-container">
+              <div class="timer-label">Consulenza gratuita entro</div>
+              <div class="timer" id="timer3">
+                <div class="timer-unit">
+                  <div class="timer-value" id="days3">30</div>
+                  <div class="timer-label-small">Giorni</div>
+                </div>
+                <div class="timer-unit">
+                  <div class="timer-value" id="hours3">00</div>
+                  <div class="timer-label-small">Ore</div>
+                </div>
+                <div class="timer-unit">
+                  <div class="timer-value" id="mins3">00</div>
+                  <div class="timer-label-small">Minuti</div>
+                </div>
+                <div class="timer-unit">
+                  <div class="timer-value" id="secs3">00</div>
+                  <div class="timer-label-small">Secondi</div>
+                </div>
+              </div>
+            </div>
             <ul>
               <li>
                 <i class="fa-solid fa-check"></i>Funzionalità personalizzate
@@ -2118,9 +2137,10 @@
         setInterval(updateTimer, 1000);
       }
 
-      // Avvia i timer per entrambi i pacchetti
+      // Avvia i timer per tutti i pacchetti
       startCountdown("timer1", "days1", "hours1", "mins1", "secs1");
       startCountdown("timer2", "days2", "hours2", "mins2", "secs2");
+      startCountdown("timer3", "days3", "hours3", "mins3", "secs3");
 
       // Quotes carousel circolare: 3 slide su desktop, 1 su mobile, autoplay + frecce + swipe
       (function () {
