@@ -3,19 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>M&F Studio — Siti web che vendono</title>
-    <meta
-      name="description"
-      content="Progetto e sviluppo siti web veloci, moderni e pensati per portare clienti. Landing page, siti vetrina, e-commerce e web app."
-    />
-    <meta property="og:title" content="M&F Studio — Siti web che vendono" />
-    <meta
-      property="og:description"
-      content="Siti web veloci, moderni e pensati per portare clienti."
-    />
+    
+    <!-- SEO META TAGS -->
+    <title>Web Agency Roma | Siti Web, App, Gestionali & Soluzioni IA | M&F Studio</title>
+    <meta name="description" content="Web agency a Roma specializzata in siti web, applicazioni gestionali, soluzioni IA e sviluppo full-stack. Da landing page a gestionali enterprise. Preventivo gratuito." />
+    <meta name="keywords" content="siti web roma, web agency roma, sviluppatore roma, app gestionali roma, soluzioni ia roma, web developer roma, ecommerce roma" />
+    <meta name="author" content="M&F Studio" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Italian" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- OPEN GRAPH (Social Media) -->
+    <meta property="og:title" content="M&F Studio | Siti Web, App e Soluzioni IA a Roma" />
+    <meta property="og:description" content="Da landing page a gestionali enterprise. Sviluppo full-stack a Roma con focus su qualità e risultati." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://iltuositoweb-roma.vercel.app" />
+    <meta property="og:image" content="https://iltuositoweb-roma.vercel.app/og-image.png" />
+    <meta property="og:locale" content="it_IT" />
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="M&F Studio | Web Agency Roma" />
+    <meta name="twitter:description" content="Siti web, app gestionali, soluzioni IA. Sviluppo full-stack di qualità." />
+    <meta name="twitter:image" content="https://iltuositoweb-roma.vercel.app/og-image.png" />
+    
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://iltuositoweb-roma.vercel.app" />
+    
+    <!-- THEME & FAVICON -->
     <meta name="theme-color" content="#0b0b12" />
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    
+    <!-- FONTS & ICONS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
@@ -27,15 +47,101 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     
-    <!-- Google Analytics 4 -->
+    <!-- SCHEMA.ORG STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://iltuositoweb-roma.vercel.app",
+      "name": "M&F Studio",
+      "image": "https://iltuositoweb-roma.vercel.app/LOGO.png",
+      "description": "Web agency Roma full-stack. Siti web, e-commerce, app gestionali, soluzioni IA custom, database cloud. Qualità premium, risultati garantiti.",
+      "url": "https://iltuositoweb-roma.vercel.app",
+      "telephone": "+39",
+      "email": "iltuositoweb.roma@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Roma",
+        "addressLocality": "Roma",
+        "addressRegion": "Lazio",
+        "postalCode": "00100",
+        "addressCountry": "IT"
+      },
+      "areaServed": ["Roma", "Lazio", "Italia"],
+      "priceRange": "€€€",
+      "sameAs": [
+        "https://www.instagram.com/mfstudio",
+        "https://www.linkedin.com/company/mf-studio"
+      ],
+      "serviceArea": {"@type": "City", "name": "Roma"},
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "9"
+      }
+    }
+    </script>
+    
+    <!-- ADDITIONAL SCHEMA: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "M&F Studio",
+      "url": "https://iltuositoweb-roma.vercel.app",
+      "logo": "https://iltuositoweb-roma.vercel.app/LOGO.png",
+      "description": "Web agency Roma - Siti web, app gestionali, soluzioni IA, sviluppo full-stack",
+      "sameAs": [
+        "https://www.instagram.com/mfstudio",
+        "https://www.linkedin.com/company/mf-studio",
+        "https://www.github.com/mfstudio"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "iltuositoweb.roma@gmail.com"
+      }
+    }
+    </script>
+    
+    <!-- SERVICES SCHEMA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Sviluppo Web e App a Roma",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "M&F Studio",
+        "url": "https://iltuositoweb-roma.vercel.app"
+      },
+      "serviceType": [
+        "Siti Web",
+        "E-commerce",
+        "Landing Page",
+        "App Gestionali",
+        "Web App",
+        "Soluzioni IA",
+        "Database Cloud",
+        "SEO",
+        "UI/UX Design"
+      ],
+      "areaServed": "Roma, Lazio, Italia",
+      "availableLanguage": ["it", "en"]
+    }
+    </script>
+    
+    <!-- GOOGLE ANALYTICS 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGFYW6DKD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-CGFYW6DKD5');
+      gtag('config', 'G-CGFYW6DKD5', {
+        'anonymize_ip': true,
+        'allow_google_signals': false
+      });
     </script>
-    <!-- Fine Google Analytics 4 -->
 
     <style>
       :root {
@@ -608,7 +714,7 @@
       /* PRICING */
       .pricing {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         align-items: stretch;
       }
@@ -626,7 +732,7 @@
           linear-gradient(var(--bg2), var(--bg2)) padding-box,
           var(--grad) border-box;
         border: 2px solid transparent;
-        transform: scale(1.03);
+        transform: scale(1.05);
         position: relative;
       }
       .badge {
@@ -651,7 +757,6 @@
         margin-top: 6px;
       }
       
-      /* SCONTO STYLING */
       .pricing-with-discount {
         position: relative;
         margin-bottom: 24px;
@@ -692,7 +797,6 @@
         font-weight: 500;
       }
       
-      /* TIMER */
       .timer-container {
         background: rgba(124, 58, 237, 0.1);
         border: 1px solid rgba(124, 58, 237, 0.3);
@@ -776,6 +880,16 @@
         color: var(--cyan);
         font-size: 0.85rem;
         font-weight: 600;
+      }
+      
+      .price-highlight {
+        background: rgba(124, 58, 237, 0.1);
+        border-left: 3px solid var(--violet);
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+        color: var(--text);
       }
 
       /* TESTIMONIALS */
@@ -1040,10 +1154,21 @@
       }
 
       /* RESPONSIVE */
+      @media (max-width: 1200px) {
+        .pricing {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .price.featured {
+          transform: scale(1.02);
+        }
+      }
       @media (max-width: 960px) {
         .services,
         .pricing {
           grid-template-columns: 1fr;
+        }
+        .pricing {
+          grid-template-columns: repeat(2, 1fr);
         }
         .steps {
           grid-template-columns: repeat(2, 1fr);
@@ -1110,200 +1235,6 @@
           box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
           font-family: Georgia, serif;
         }
-        .condo-preview {
-          position: relative;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 24px;
-          background: #f8f3e9;
-          color: #262d3a;
-          text-align: center;
-        }
-        .preview-language {
-          position: absolute;
-          top: 18px;
-          right: 18px;
-          padding: 5px 9px;
-          border: 1px solid #e6dfd1;
-          border-radius: 20px;
-          background: #fffdf8;
-          color: #3c5268;
-          font: 10px var(--sans);
-        }
-        .condo-symbol {
-          margin-bottom: 8px;
-          color: #77748e;
-          font-size: 24px;
-        }
-        .condo-preview h4 {
-          font-size: 21px;
-        }
-        .condo-preview > p {
-          margin: 7px 0 17px;
-          color: #78808a;
-          font: 10px var(--sans);
-        }
-        .condo-form {
-          display: grid;
-          width: 100%;
-          gap: 10px;
-          padding: 14px;
-          border: 1px solid #e7dfd2;
-          border-radius: 9px;
-          background: #fff;
-          box-shadow: 0 5px 14px rgba(58, 44, 26, 0.1);
-          text-align: left;
-          font: 9px var(--sans);
-        }
-        .condo-field {
-          display: grid;
-          gap: 4px;
-          color: #2d4962;
-        }
-        .condo-field span {
-          padding: 8px;
-          border: 1px solid #e6ddce;
-          border-radius: 5px;
-          background: #fbf8f1;
-          color: #80858a;
-        }
-        .condo-submit {
-          padding: 8px;
-          border-radius: 20px;
-          background: #bd4b32;
-          color: white;
-          text-align: center;
-          font-weight: 700;
-        }
-        .legal-preview {
-          flex-direction: column;
-          background: #fff;
-          color: #092e53;
-          font-family: var(--sans);
-        }
-        .legal-nav,
-        .green-nav {
-          display: flex;
-          flex: 0 0 48px;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 17px;
-          background: #fff;
-          font-size: 12px;
-          font-weight: 700;
-        }
-        .legal-nav i {
-          color: #008ec7;
-          font-size: 17px;
-        }
-        .legal-hero {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          min-height: 184px;
-          padding: 16px;
-          background: #e7f4fc;
-          text-align: center;
-        }
-        .legal-hero h4 {
-          font-size: 22px;
-          line-height: 1.15;
-        }
-        .legal-hero .lawyer-name {
-          margin-top: 7px;
-          font-size: 13px;
-        }
-        .legal-hero .law-areas {
-          margin: 7px 0 12px;
-          color: #586c7d;
-          font: 9px/1.45 var(--sans);
-        }
-        .preview-actions {
-          display: grid;
-          width: 100%;
-          gap: 7px;
-        }
-        .preview-action {
-          padding: 8px 10px;
-          border: 1px solid #008fc7;
-          border-radius: 4px;
-          background: #008fc7;
-          color: white;
-          font: 600 10px var(--sans);
-        }
-        .preview-action.secondary {
-          background: white;
-          color: #008fc7;
-        }
-        .legal-specialties {
-          display: grid;
-          gap: 7px;
-          padding: 11px 13px;
-          background: #fff;
-        }
-        .legal-specialties h5 {
-          margin: 0 0 1px;
-          font-size: 16px;
-          text-align: center;
-        }
-        .legal-specialty {
-          padding: 7px 9px;
-          border-left: 3px solid #008fc7;
-          border-radius: 5px;
-          background: #f6f8fa;
-          font: 9px/1.35 var(--sans);
-        }
-        .legal-specialty strong {
-          display: block;
-          margin-bottom: 2px;
-          font-size: 9px;
-        }
-        .green-preview {
-          flex-direction: column;
-          background: #e8fbf1;
-          color: #075d49;
-          font-family: var(--sans);
-        }
-        .green-nav {
-          color: #087b60;
-        }
-        .green-nav i {
-          color: #087b60;
-          font-size: 17px;
-        }
-        .green-hero {
-          display: flex;
-          flex: 1;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 26px 19px;
-          text-align: center;
-        }
-        .green-hero h4 {
-          font-size: 25px;
-          line-height: 1.13;
-        }
-        .green-hero .green-subtitle {
-          margin-top: 9px;
-          color: #087b60;
-          font-size: 13px;
-        }
-        .green-hero .green-tagline {
-          margin: 6px 0 17px;
-          color: #149773;
-          font: 10px var(--sans);
-        }
-        .green-preview .preview-action {
-          border-color: #00ae82;
-          background: #00ae82;
-        }
-        .green-preview .preview-action.secondary {
-          background: transparent;
-          color: #008f6b;
-        }
         .work-visual picture {
           height: auto;
         }
@@ -1320,6 +1251,9 @@
         section.block {
           padding: 80px 0;
         }
+        .pricing {
+          grid-template-columns: 1fr;
+        }
         
         .timer {
           grid-template-columns: repeat(4, 1fr);
@@ -1335,7 +1269,7 @@
     <nav id="nav">
       <div class="container nav-inner">
         <a href="#" class="logo"
-          ><img class="logo-image" src="LOGO.png" alt="M&amp;F Studio"
+          ><img class="logo-image" src="LOGO.png" alt="M&F Studio - Web Agency Roma - Siti Web, App Gestionali, Soluzioni IA"
         /></a>
         <div class="nav-links" id="links">
           <a href="#servizi">Servizi</a>
@@ -1363,17 +1297,17 @@
           <span class="dot"></span> Disponibile per nuovi progetti
         </div>
         <h1>
-          Siti web che<br /><span class="grad-text rotator" id="rotator"
-            >vendono</span
-          >.
+          Siti web, app &<br /><span class="grad-text rotator" id="rotator"
+            >soluzioni IA</span
+          >.<br/>
+          <span style="font-size: 0.8em; color: var(--muted);">Da startup a enterprise</span>
         </h1>
         <p>
-          Progetto e sviluppo siti veloci, moderni e su misura. Niente template
-          anonimi: un sito che racconta la tua attività e porta clienti veri.
+          Web agency full-stack a Roma. Realizziamo siti web, e-commerce, app gestionali, soluzioni IA custom e database cloud. Qualità premium, risultati misurabili.
         </p>
         <div class="hero-cta">
           <a href="#contatti" class="btn btn-primary" onclick="gtag('event', 'click', {'event_category': 'pulsanti_hero', 'event_label': 'preventivo_gratuito'});"
-            >Richiedi un preventivo gratuito
+            >Richiedi una consulenza gratuita
             <i class="fa-solid fa-arrow-right"></i
           ></a>
           <a href="#lavori" class="btn btn-ghost" onclick="gtag('event', 'click', {'event_category': 'pulsanti_hero', 'event_label': 'guarda_lavori'});"
@@ -1400,21 +1334,21 @@
     <div class="marquee">
       <div class="track">
         <span
-          >Siti vetrina <i class="fa-solid fa-star"></i> E-commerce
-          <i class="fa-solid fa-star"></i> Landing page
-          <i class="fa-solid fa-star"></i> Web app
-          <i class="fa-solid fa-star"></i> SEO
-          <i class="fa-solid fa-star"></i> UI/UX Design
-          <i class="fa-solid fa-star"></i> Restyling
+          >Siti vetrina Roma <i class="fa-solid fa-star"></i> E-commerce
+          <i class="fa-solid fa-star"></i> App gestionali
+          <i class="fa-solid fa-star"></i> Soluzioni IA
+          <i class="fa-solid fa-star"></i> Web app custom
+          <i class="fa-solid fa-star"></i> SEO Roma
+          <i class="fa-solid fa-star"></i> Database cloud
           <i class="fa-solid fa-star"></i
         ></span>
         <span
-          >Siti vetrina <i class="fa-solid fa-star"></i> E-commerce
-          <i class="fa-solid fa-star"></i> Landing page
-          <i class="fa-solid fa-star"></i> Web app
-          <i class="fa-solid fa-star"></i> SEO
-          <i class="fa-solid fa-star"></i> UI/UX Design
-          <i class="fa-solid fa-star"></i> Restyling
+          >Siti vetrina Roma <i class="fa-solid fa-star"></i> E-commerce
+          <i class="fa-solid fa-star"></i> App gestionali
+          <i class="fa-solid fa-star"></i> Soluzioni IA
+          <i class="fa-solid fa-star"></i> Web app custom
+          <i class="fa-solid fa-star"></i> SEO Roma
+          <i class="fa-solid fa-star"></i> Database cloud
           <i class="fa-solid fa-star"></i
         ></span>
       </div>
@@ -1423,67 +1357,60 @@
     <section class="block" id="servizi">
       <div class="container">
         <div class="section-head reveal">
-          <div class="eyebrow">Servizi</div>
+          <div class="eyebrow">Cosa Facciamo</div>
           <h2>
-            Tutto quello che serve per
-            <span class="grad-text">farti trovare</span>.
+            Molto più di semplici
+            <span class="grad-text">siti web</span>.
           </h2>
           <p>
-            Dalla prima bozza alla messa online. Un unico referente, zero
-            complicazioni.
+            Dalle landing page ai gestionali enterprise. Soluzioni complete, scalabili e orientate ai risultati. Sviluppo full-stack con qualità premium.
           </p>
         </div>
         <div class="services">
           <div class="card reveal">
             <div class="icon"><i class="fa-solid fa-store"></i></div>
-            <h3>Siti vetrina</h3>
+            <h3>Siti Web & E-commerce</h3>
             <p>
-              Il biglietto da visita digitale della tua attività. Elegante,
-              chiaro, pensato per convertire visite in contatti.
+              Landing page, siti vetrina e negozi online. Design moderno, velocissimi e ottimizzati per convertire visite in clienti reali.
             </p>
           </div>
           <div class="card reveal">
-            <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
-            <h3>E-commerce</h3>
+            <div class="icon"><i class="fa-solid fa-sliders"></i></div>
+            <h3>App Gestionali</h3>
             <p>
-              Negozi online semplici da gestire, con pagamenti sicuri e un
-              checkout che non fa scappare i clienti.
+              Gestionali custom, area clienti riservate, sistemi di prenotazione. Database cloud sicuri, scalabili e facili da usare.
             </p>
           </div>
           <div class="card reveal">
-            <div class="icon"><i class="fa-solid fa-rocket"></i></div>
-            <h3>Landing page</h3>
+            <div class="icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>Soluzioni IA Custom</h3>
             <p>
-              Pagine singole ad alto impatto per campagne, lanci e promozioni.
-              Ottimizzate per le conversioni.
+              Automazioni IA, chatbot intelligenti, analisi dati avanzate. Integriamo soluzioni AI direttamente nei tuoi sistemi.
             </p>
           </div>
           <div class="card reveal">
             <div class="icon"><i class="fa-solid fa-code"></i></div>
-            <h3>Web app</h3>
+            <h3>Web App & SaaS</h3>
             <p>
-              Gestionali, aree riservate, prenotazioni. Applicazioni su misura
-              con React e database cloud.
+              Applicazioni web scalabili, piattaforme SaaS, strumenti interni. Realizzate con React, Node.js e architetture cloud moderne.
             </p>
           </div>
           <div class="card reveal">
             <div class="icon">
               <i class="fa-solid fa-magnifying-glass-chart"></i>
             </div>
-            <h3>SEO &amp; Performance</h3>
+            <h3>SEO & Performance</h3>
             <p>
-              Siti velocissimi e ottimizzati per Google. Perché un bel sito che
-              nessuno trova non serve.
+              Siti velocissimi (Core Web Vitals 95+), ottimizzati per Google. Strategie SEO complete per dominare le ricerche a Roma e oltre.
             </p>
           </div>
           <div class="card reveal">
             <div class="icon">
-              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <i class="fa-solid fa-palette"></i>
             </div>
-            <h3>Manutenzione</h3>
+            <h3>Loghi & Brand Design</h3>
             <p>
-              Aggiornamenti, backup, sicurezza e modifiche. Il tuo sito resta
-              sempre in forma.
+              Logo custom, brand identity, linee guida visive. Inclusei in tutti i pacchetti Business e superior per coerenza totale.
             </p>
           </div>
         </div>
@@ -1494,38 +1421,22 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Portfolio</div>
-          <h2>Lavori <span class="grad-text">selezionati</span>.</h2>
+          <h2>Progetti <span class="grad-text">che vendono</span>.</h2>
           <p>
-            Alcuni progetti recenti. Ogni sito è diverso, perché ogni attività è
-            diversa.
+            Alcuni lavori recenti. Siti web, app gestionali, e-commerce. Ogni progetto realizzato con dedizione e risultati misurabili.
           </p>
         </div>
         <div class="works">
           <a href="#" class="work reveal" onclick="gtag('event', 'click', {'event_category': 'portfolio', 'event_label': 'condo_project'});"
             ><div class="work-visual w1">
               <picture>
-                <img src="images/Io_condo.png" alt="Il mio Condominio" />
+                <img src="images/Io_condo.png" alt="Il mio Condominio - App Gestionale" />
               </picture>
-              <div class="mobile-preview condo-preview" aria-hidden="true">
-                <span class="preview-language"
-                  ><i class="fa-solid fa-globe"></i> Italiano</span
-                >
-                <i class="fa-solid fa-building-columns condo-symbol"></i>
-                <h4>Il mio Condominio</h4>
-                <p>Accedi per vedere bollettini, avvisi e documenti</p>
-                <div class="condo-form">
-                  <div class="condo-field">
-                    Indirizzo email<span>nome@esempio.it</span>
-                  </div>
-                  <div class="condo-field">Password<span>••••••••</span></div>
-                  <div class="condo-submit">Entra</div>
-                </div>
-              </div>
             </div>
             <div class="work-info">
               <div>
                 <h3>Il mio Condominio</h3>
-                <span>Web app · Gestione condominiale</span>
+                <span>App Gestionale · Database Cloud</span>
               </div>
               <div class="arrow">
                 <i class="fa-solid fa-arrow-right"></i>
@@ -1534,41 +1445,13 @@
           <a href="#" class="work reveal" onclick="gtag('event', 'click', {'event_category': 'portfolio', 'event_label': 'studio_legale_project'});"
             ><div class="work-visual w2">
               <picture>
-                <img src="images/studio_legale.png" alt="Studio Legale Rossi" />
+                <img src="images/studio_legale.png" alt="Studio Legale Rossi - Sito Web Professionale" />
               </picture>
-              <div class="mobile-preview legal-preview" aria-hidden="true">
-                <div class="legal-nav">
-                  <span>Studio Legale Rossi</span
-                  ><i class="fa-solid fa-bars"></i>
-                </div>
-                <div class="legal-hero">
-                  <h4>Studio Legale Rossi</h4>
-                  <span class="lawyer-name">Avv. Marco Rossi</span>
-                  <p class="law-areas">
-                    Diritto Civile · Commerciale · Contrattuale · Successioni
-                  </p>
-                  <div class="preview-actions">
-                    <div class="preview-action">Prenota Consulenza</div>
-                    <div class="preview-action secondary">Scopri di più</div>
-                  </div>
-                </div>
-                <div class="legal-specialties">
-                  <h5>Aree di Specializzazione</h5>
-                  <div class="legal-specialty">
-                    <strong>Diritto Civile</strong>Contratti, responsabilità
-                    civile e tutela dei diritti.
-                  </div>
-                  <div class="legal-specialty">
-                    <strong>Diritto Commerciale</strong>Società, contratti e
-                    transazioni commerciali.
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="work-info">
               <div>
                 <h3>Studio Legale Rossi</h3>
-                <span>Sito vetrina · Professionisti</span>
+                <span>Sito Vetrina · SEO Avanzata</span>
               </div>
               <div class="arrow">
                 <i class="fa-solid fa-arrow-right"></i>
@@ -1577,29 +1460,13 @@
           <a href="#" class="work reveal" onclick="gtag('event', 'click', {'event_category': 'portfolio', 'event_label': 'greenshop_project'});"
             ><div class="work-visual w3">
               <picture>
-                <img src="images/greenshop.png" alt="GreenShop" />
+                <img src="images/greenshop.png" alt="GreenShop - E-commerce Prodotti Bio" />
               </picture>
-              <div class="mobile-preview green-preview" aria-hidden="true">
-                <div class="green-nav">
-                  <span>GreenShop</span><i class="fa-solid fa-bars"></i>
-                </div>
-                <div class="green-hero">
-                  <h4>Prodotti Bio 100% Naturali</h4>
-                  <p class="green-subtitle">Sostenibili e a Filiera Corta</p>
-                  <p class="green-tagline">
-                    Dal produttore direttamente a casa tua
-                  </p>
-                  <div class="preview-actions">
-                    <div class="preview-action">Scopri i Prodotti</div>
-                    <div class="preview-action secondary">Leggi di Più</div>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="work-info">
               <div>
                 <h3>GreenShop</h3>
-                <span>E-commerce · Prodotti bio</span>
+                <span>E-commerce · Pagamenti Online</span>
               </div>
               <div class="arrow">
                 <i class="fa-solid fa-arrow-right"></i>
@@ -1616,13 +1483,13 @@
                   media="(max-width: 560px)"
                   srcset="images/mobile/kepos.png"
                 />
-                <img src="images/kepos.png" alt="Kepos Taormina" />
+                <img src="images/kepos.png" alt="Kepos Taormina - Sito Ristorante" />
               </picture>
             </div>
             <div class="work-info">
               <div>
                 <h3>Kepos Taormina</h3>
-                <span>Sito ristorante · Ristorazione</span>
+                <span>Sito Ristorante · Prenotazioni Online</span>
               </div>
               <div class="arrow">
                 <i class="fa-solid fa-arrow-right"></i>
@@ -1637,27 +1504,26 @@
         <div class="section-head reveal">
           <div class="eyebrow">Metodo</div>
           <h2>Online in <span class="grad-text">4 passi</span>.</h2>
-          <p>Un processo chiaro, tempi certi, nessuna sorpresa.</p>
+          <p>Processo trasparente, tempi certi. Dalla consulenza al lancio, sempre al tuo fianco.</p>
         </div>
         <div class="steps">
           <div class="step reveal">
-            <h3>Ascolto</h3>
-            <p>Una call gratuita per capire attività, obiettivi e pubblico.</p>
+            <h3>Consulenza</h3>
+            <p>Call gratuita per capire attività, obiettivi, target. Niente pressione, solo ascolto.</p>
           </div>
           <div class="step reveal">
-            <h3>Design</h3>
+            <h3>Design & Plan</h3>
             <p>
-              Ti mostro il progetto grafico prima di scrivere una riga di
-              codice.
+              Mockup dettagliato, architettura tecnica, timeline. Approvi prima di ogni riga di codice.
             </p>
           </div>
           <div class="step reveal">
             <h3>Sviluppo</h3>
-            <p>Codice pulito, veloce, responsive su ogni dispositivo.</p>
+            <p>Codice pulito, veloce, scalabile. Tecnologie moderne, best practices, sicurezza inclusa.</p>
           </div>
           <div class="step reveal">
-            <h3>Lancio</h3>
-            <p>Messa online, dominio, analytics. E resto al tuo fianco dopo.</p>
+            <h3>Lancio & Support</h3>
+            <p>Messa online, dominio, analytics. Supporto post-lancio incluso, sempre disponibile.</p>
           </div>
         </div>
       </div>
@@ -1667,16 +1533,16 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Prezzi</div>
-          <h2>Pacchetti <span class="grad-text">trasparenti</span>.</h2>
+          <h2>Investimenti <span class="grad-text">trasparenti</span>.</h2>
           <p>
-            Prezzi indicativi. Ogni preventivo è su misura e gratuito.<br />
-            I prezzi esposti sono IVA inclusa.
+            Qualità premium, non cerchiamo il più economico. Ogni preventivo è su misura, gratuito e senza impegno.<br />
+            I prezzi sono IVA inclusa.
           </p>
         </div>
         <div class="pricing">
           <div class="price reveal">
-            <h3>Start</h3>
-            <div class="sub">Per iniziare con il piede giusto</div>
+            <h3>Starter</h3>
+            <div class="sub">Per iniziare</div>
             <div class="pricing-with-discount">
               <div class="original-price">€800</div>
               <div class="amount">€640<small> una tantum</small></div>
@@ -1703,21 +1569,24 @@
                 </div>
               </div>
             </div>
+            <div class="price-highlight">
+              ✨ <strong>Novità:</strong> 30 giorni di revisioni gratis
+            </div>
             <div class="canone">
-              <i class="fa-solid fa-rotate"></i>+ €10/mese per hosting e supporto
+              <i class="fa-solid fa-rotate"></i>+ €10/mese hosting & supporto
             </div>
             <ul>
               <li><i class="fa-solid fa-check"></i>Landing page singola</li>
               <li><i class="fa-solid fa-check"></i>Design responsive</li>
-              <li><i class="fa-solid fa-check"></i>Modulo contatti</li>
               <li><i class="fa-solid fa-check"></i>SEO di base</li>
+              <li><i class="fa-solid fa-check"></i>Modulo contatti</li>
             </ul>
-            <a href="#contatti" class="btn btn-ghost" onclick="gtag('event', 'click', {'event_category': 'piani_prezzi', 'event_label': 'scegli_start'});">Scegli Start</a>
+            <a href="#contatti" class="btn btn-ghost" onclick="gtag('event', 'click', {'event_category': 'piani_prezzi', 'event_label': 'scegli_starter'});">Scegli Starter</a>
           </div>
           <div class="price featured reveal">
-            <span class="badge">Più richiesto</span>
+            <span class="badge">Più Richiesto</span>
             <h3>Business</h3>
-            <div class="sub">Il sito vetrina completo</div>
+            <div class="sub">Sito vetrina professionale</div>
             <div class="pricing-with-discount">
               <div class="original-price">€1.600</div>
               <div class="amount">€1.200<small> una tantum</small></div>
@@ -1744,25 +1613,26 @@
                 </div>
               </div>
             </div>
+            <div class="price-highlight">
+              ✨ <strong>Incluso:</strong> Logo custom + 3 mesi assistenza
+            </div>
             <div class="canone">
-              <i class="fa-solid fa-rotate"></i>+ €10/mese per hosting e supporto
+              <i class="fa-solid fa-rotate"></i>+ €10/mese hosting & supporto
             </div>
             <ul>
               <li><i class="fa-solid fa-check"></i>Fino a 6 pagine</li>
               <li><i class="fa-solid fa-check"></i>Design personalizzato</li>
-              <li>
-                <i class="fa-solid fa-check"></i>SEO avanzata + Google Maps
-              </li>
-              <li><i class="fa-solid fa-check"></i>Blog / news</li>
-              <li><i class="fa-solid fa-check"></i>3 mesi di assistenza</li>
+              <li><i class="fa-solid fa-check"></i>Logo design custom</li>
+              <li><i class="fa-solid fa-check"></i>SEO avanzata + Google Maps</li>
+              <li><i class="fa-solid fa-check"></i>Blog/news illimitato</li>
             </ul>
             <a href="#contatti" class="btn btn-primary" onclick="gtag('event', 'click', {'event_category': 'piani_prezzi', 'event_label': 'scegli_business'});">Scegli Business</a>
           </div>
           <div class="price reveal">
-            <h3>Custom</h3>
-            <div class="sub">E-commerce e web app</div>
+            <h3>Premium</h3>
+            <div class="sub">E-commerce e app</div>
             <div class="pricing-with-discount">
-              <div class="amount">Su misura</div>
+              <div class="amount">Da €2.500<small> una tantum</small></div>
               <div class="discount-badge">-30%</div>
             </div>
             <div class="timer-container">
@@ -1786,15 +1656,58 @@
                 </div>
               </div>
             </div>
+            <div class="price-highlight">
+              ✨ <strong>Incluso:</strong> Logo + 6 mesi supporto dedicato
+            </div>
             <ul>
-              <li>
-                <i class="fa-solid fa-check"></i>Funzionalità personalizzate
-              </li>
-              <li><i class="fa-solid fa-check"></i>Area riservata / login</li>
-              <li><i class="fa-solid fa-check"></i>Pagamenti online</li>
-              <li><i class="fa-solid fa-check"></i>Integrazioni e database</li>
+              <li><i class="fa-solid fa-check"></i>E-commerce o app gestionale</li>
+              <li><i class="fa-solid fa-check"></i>Design esclusivo</li>
+              <li><i class="fa-solid fa-check"></i>Logo design custom</li>
+              <li><i class="fa-solid fa-check"></i>Database cloud sicuro</li>
+              <li><i class="fa-solid fa-check"></i>Pagamenti online integrati</li>
+              <li><i class="fa-solid fa-check"></i>6 mesi assistenza inclusa</li>
             </ul>
-            <a href="#contatti" class="btn btn-ghost" onclick="gtag('event', 'click', {'event_category': 'piani_prezzi', 'event_label': 'parliamone_custom'});">Parliamone</a>
+            <a href="#contatti" class="btn btn-ghost" onclick="gtag('event', 'click', {'event_category': 'piani_prezzi', 'event_label': 'scegli_premium'});">Scegli Premium</a>
+          </div>
+          <div class="price reveal">
+            <h3>Enterprise</h3>
+            <div class="sub">Soluzioni IA & Custom</div>
+            <div class="pricing-with-discount">
+              <div class="amount">Su misura<small> consulenza</small></div>
+              <div class="discount-badge">-30%</div>
+            </div>
+            <div class="timer-container">
+              <div class="timer-label">Sconto valido per</div>
+              <div class="timer" id="timer4">
+                <div class="timer-unit">
+                  <div class="timer-value" id="days4">30</div>
+                  <div class="timer-label-small">Giorni</div>
+                </div>
+                <div class="timer-unit">
+                  <div class="timer-value" id="hours4">00</div>
+                  <div class="timer-label-small">Ore</div>
+                </div>
+                <div class="timer-unit">
+                  <div class="timer-value" id="mins4">00</div>
+                  <div class="timer-label-small">Minuti</div>
+                </div>
+                <div class="timer-unit">
+                  <div class="timer-value" id="secs4">00</div>
+                  <div class="timer-label-small">Secondi</div>
+                </div>
+              </div>
+            </div>
+            <div class="price-highlight">
+              ✨ <strong>Incluso:</strong> Consulenza strategica gratuita
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Soluzioni IA custom</li>
+              <li><i class="fa-solid fa-check"></i>Automazioni avanzate</li>
+              <li><i class="fa-solid fa-check"></i>Database & infra cloud</li>
+              <li><i class="fa-solid fa-check"></i>App gestionali enterprise</li>
+              <li><i class="fa-solid fa-check"></i>Supporto dedicato 24/7</li>
+            </ul>
+            <a href="#contatti" class="btn btn-ghost" onclick="gtag('event', 'click', {'event_category': 'piani_prezzi', 'event_label': 'parliamone_enterprise'});">Parliamone</a>
           </div>
         </div>
       </div>
@@ -1803,8 +1716,8 @@
     <section class="block" style="padding: 50px 0 0">
       <div class="container">
         <div class="section-head reveal">
-          <div class="eyebrow">Dicono di me</div>
-          <h2>Clienti <span class="grad-text">felici</span>.</h2>
+          <div class="eyebrow">Clienti Felici</div>
+          <h2>Chi <span class="grad-text">ha scelto noi</span>.</h2>
         </div>
         <div class="quotes-container">
           <button class="carousel-arrow prev" id="prevQuote">
@@ -1814,8 +1727,7 @@
             <div class="quote">
               <div class="stars">★★★★★</div>
               <p>
-                "In tre settimane avevamo il sito online. Le richieste di
-                preventivo sono raddoppiate."
+                "In tre settimane online. Le richieste di preventivo sono raddoppiate. Investimento che non mi pento."
               </p>
               <div class="who">
                 <div class="avatar">LR</div>
@@ -1825,8 +1737,7 @@
             <div class="quote">
               <div class="stars">★★★★★</div>
               <p>
-                "Disponibile, veloce e preciso. Ha capito subito cosa volevamo
-                comunicare."
+                "Disponibile, veloce e preciso. Ha capito subito cosa volevamo comunicare. Ottima qualità."
               </p>
               <div class="who">
                 <div class="avatar">GM</div>
@@ -1836,8 +1747,7 @@
             <div class="quote">
               <div class="stars">★★★★★</div>
               <p>
-                "Il nuovo e-commerce è semplicissimo da gestire. Finalmente
-                vendiamo online sul serio."
+                "L'e-commerce è semplicissimo da gestire. Finalmente vendiamo online sul serio. Consigliato!"
               </p>
               <div class="who">
                 <div class="avatar">SC</div>
@@ -1847,8 +1757,7 @@
             <div class="quote">
               <div class="stars">★★★★★</div>
               <p>
-                "Mi ha aiutato a trasformare la mia idea in realtà.
-                Professionale e sempre disponibile."
+                "Mi ha aiutato a trasformare l'idea in realtà. Professionale, sempre disponibile, puntuale."
               </p>
               <div class="who">
                 <div class="avatar">FS</div>
@@ -1858,8 +1767,7 @@
             <div class="quote">
               <div class="stars">★★★★★</div>
               <p>
-                "Il sito è bellissimo e le conversioni sono aumentate del 40%.
-                Consigliato!"
+                "Il sito è bellissimo e le conversioni sono aumentate del 40%. ROI positivo in 3 mesi."
               </p>
               <div class="who">
                 <div class="avatar">MC</div>
@@ -1869,19 +1777,17 @@
             <div class="quote">
               <div class="stars">★★★★★</div>
               <p>
-                "Ottimo rapporto qualità-prezzo. Ha rispettato i tempi e ha
-                superato le aspettative."
+                "Qualità-prezzo eccezionale. Ha rispettato i tempi e superato le aspettative. Bravo!"
               </p>
               <div class="who">
                 <div class="avatar">AP</div>
-                <div>Andrea P.<small>Agenzia di viaggi</small></div>
+                <div>Andrea P.<small>Agenzia viaggi</small></div>
               </div>
             </div>
             <div class="quote">
               <div class="stars">★★★★★</div>
               <p>
-                "Un vero professionista. Il sito è velocissimo, bellissimo e
-                facile da gestire."
+                "Velocissimo, bellissimo e facile da usare. Un vero professionista. Lo ritengo."
               </p>
               <div class="who">
                 <div class="avatar">EG</div>
@@ -1891,8 +1797,7 @@
             <div class="quote">
               <div class="stars">★★★★★</div>
               <p>
-                "Ha creato un sito che comunica davvero i valori della mia
-                azienda. Fantastico!"
+                "Ha capito i valori della mia azienda e li ha trasformati in design. Fantastico!"
               </p>
               <div class="who">
                 <div class="avatar">RD</div>
@@ -1902,8 +1807,7 @@
             <div class="quote">
               <div class="stars">★★★★★</div>
               <p>
-                "Dopo il restyling le visite sono triplicate. Investimento che
-                non mi pento."
+                "Il restyling ha triplicato le visite. Investimento perfetto. Non lo pentire mai."
               </p>
               <div class="who">
                 <div class="avatar">VB</div>
@@ -1930,11 +1834,10 @@
           <div>
             <div class="eyebrow">Contatti</div>
             <h2>
-              Hai un progetto?<br /><span class="grad-text">Parliamone.</span>
+              Hai un progetto?<br /><span class="grad-text">Iniziamo oggi.</span>
             </h2>
             <p>
-              Raccontami la tua idea. Rispondo entro 24 ore con una proposta
-              concreta e senza impegno.
+              Una consulenza gratuita per capire se siamo la scelta giusta per te. Niente pressione, solo soluzioni concrete. Rispondo entro 24 ore.
             </p>
             <div class="contact-list">
               <a href="mailto:iltuositoweb.roma@gmail.com"
@@ -1942,8 +1845,7 @@
                 >iltuositoweb.roma@gmail.com</a
               >
               <a href="#"
-                ><i class="fa-solid fa-location-dot"></i>Roma · Lavoro anche da
-                remoto</a
+                ><i class="fa-solid fa-location-dot"></i>Roma, Italia · Lavoro in remoto</a
               >
             </div>
           </div>
@@ -1956,15 +1858,16 @@
             <input
               type="hidden"
               name="_subject"
-              value="Nuova richiesta dal sito M&amp;F Studio"
+              value="Nuova richiesta dal sito M&F Studio"
             />
             <input name="nome" placeholder="Nome e cognome" required="" />
             <input name="email" type="email" placeholder="Email" required="" />
             <select name="tipo" onchange="gtag('event', 'engagement', {'event_category': 'form', 'event_label': 'tipo_progetto_selezionato', 'value': this.value});">
-              <option>Sito vetrina</option>
+              <option>Sito web</option>
               <option>E-commerce</option>
+              <option>App gestionale</option>
               <option>Landing page</option>
-              <option>Web app</option>
+              <option>Soluzione IA</option>
               <option>Altro</option>
             </select>
             <textarea
@@ -1973,7 +1876,7 @@
               required=""
             ></textarea>
             <p class="privacy-notice">
-              I dati saranno usati per rispondere alla richiesta. Consulta
+              I dati saranno usati solo per rispondere alla tua richiesta. Consulta
               <a href="privacy.html">l'informativa privacy</a> prima dell'invio.
             </p>
             <input
@@ -2000,7 +1903,7 @@
     <footer>
       <div class="container foot">
         <a href="#" class="logo"
-          ><img class="logo-image" src="LOGO.png" alt="M&amp;F Studio"
+          ><img class="logo-image" src="LOGO.png" alt="M&F Studio - Web Agency Roma"
         /></a>
         <span>© <span id="y"></span> MF Studio · Roma</span>
         <a class="legal-link" href="privacy.html">Privacy e note legali</a>
@@ -2038,7 +1941,7 @@
         .forEach((a) => (a.onclick = () => links.classList.remove("open")));
 
       // Rotating word
-      const words = ["vendono", "convertono", "emozionano", "funzionano"];
+      const words = ["vendono", "convertono", "scalano", "crescono"];
       let wi = 0;
       const rot = document.getElementById("rotator");
       setInterval(() => {
@@ -2067,7 +1970,7 @@
         io.observe(el);
       });
 
-      // Counters - partono quando visibili
+      // Counters
       const countElements = document.querySelectorAll(".count");
       const io2 = new IntersectionObserver(
         (entries) => {
@@ -2101,7 +2004,7 @@
         }),
       );
 
-      // Timer countdown 30 giorni
+      // Timer countdown
       function startCountdown(timerElementId, daysId, hoursId, minsId, secsId) {
         const now = new Date();
         const endDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
@@ -2147,12 +2050,12 @@
         setInterval(updateTimer, 1000);
       }
 
-      // Avvia i timer per tutti i pacchetti
       startCountdown("timer1", "days1", "hours1", "mins1", "secs1");
       startCountdown("timer2", "days2", "hours2", "mins2", "secs2");
       startCountdown("timer3", "days3", "hours3", "mins3", "secs3");
+      startCountdown("timer4", "days4", "hours4", "mins4", "secs4");
 
-      // Quotes carousel circolare: 3 slide su desktop, 1 su mobile, autoplay + frecce + swipe
+      // Quotes carousel
       (function () {
         const viewport = document.getElementById("quotesCarousel");
         const originals = Array.from(viewport.querySelectorAll(".quote"));
@@ -2180,7 +2083,7 @@
         function place(animate) {
           track.classList.toggle("no-anim", !animate);
           track.style.transform = `translateX(${-(index + perView) * (100 / perView)}%)`;
-          if (!animate) void track.offsetWidth; // forza il reflow prima della prossima animazione
+          if (!animate) void track.offsetWidth;
         }
 
         function build() {
@@ -2188,10 +2091,10 @@
           track.classList.toggle("one", perView === 1);
           track.innerHTML = "";
           for (let i = n - perView; i < n; i++)
-            track.appendChild(slide(originals[i])); // cloni in testa
-          originals.forEach((el) => track.appendChild(slide(el))); // slide reali
+            track.appendChild(slide(originals[i]));
+          originals.forEach((el) => track.appendChild(slide(el)));
           for (let i = 0; i < perView; i++)
-            track.appendChild(slide(originals[i])); // cloni in coda
+            track.appendChild(slide(originals[i]));
           index = 0;
           busy = false;
           place(false);
@@ -2203,7 +2106,6 @@
           index += dir;
           place(true);
           setTimeout(() => {
-            // salto invisibile quando si esce dalla serie reale: il giro è infinito
             if (index >= n) index -= n;
             if (index < 0) index += n;
             place(false);
@@ -2225,7 +2127,6 @@
           restart();
         });
 
-        // swipe su touch
         let x0 = null;
         viewport.addEventListener(
           "touchstart",
@@ -2248,7 +2149,6 @@
           { passive: true },
         );
 
-        // pausa con il mouse sopra (solo desktop)
         const box = viewport.parentElement;
         box.addEventListener("mouseenter", () => clearInterval(timer));
         box.addEventListener("mouseleave", restart);
@@ -2257,8 +2157,6 @@
         build();
         restart();
       })();
-
-      // Il form invia direttamente a Formspree (action HTML), nessun JS necessario
     </script>
   </body>
 </html>
